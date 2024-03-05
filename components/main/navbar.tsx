@@ -20,7 +20,7 @@ export const Navbar = () => {
             className="cursor-pointer hover:animate-slowspin"
           />
           <div className="font-bold ml-[10px] hidden md:block text-gray-300">
-            Umesh Thapa
+            ewumesh
           </div>
         </Link>
 
@@ -37,14 +37,14 @@ export const Navbar = () => {
             ))}
 
             {/* source code */}
-            <Link
+            {/* <Link
               href={LINKS.sourceCode}
               target="_blank"
               rel="noreferrer noopener"
               className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
             >
               Source Code
-            </Link>
+            </Link> */}
           </div>
         </div>
 
