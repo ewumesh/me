@@ -259,25 +259,32 @@ export const OTHER_SKILL = [
 
 export const PROJECTS = [
   {
-    title: "Modern Next.js 14 Portfolio",
+    title: "Venio Systems",
     description:
-      'Embark on a journey through my professional evolution with the "Modern Next.js Portfolio" - a dynamic showcase of my skills, experiences, and passion for web development. Crafted with precision and powered by Next.js, this portfolio is more than just a static display; it\'s an immersive experience that reflects the cutting edge of modern web technologies.',
-    image: "/projects/project-1.png",
-    link: "https://example.com",
+      'Venio is the best integrated eDiscovery platform on the market, and OPTiMO offers that best-in-breed technology as a managed service to streamline the eDiscovery process, lower costs, and provide a predictable pricing model.',
+    image: "/projects/v1.png",
+    link: "https://www.veniosystems.com/",
   },
   {
-    title: "Interactive Cards Portfolio",
+    title: "Sajha Investment",
     description:
-      'Step into the extraordinary world of my professional journey through the "Interactive Cards Portfolio" - an innovative and visually captivating platform that redefines the traditional portfolio experience. Ditching the conventional static layout, this portfolio leverages interactive cards to showcase my skills, projects, and personality in an engaging and dynamic manner.',
-    image: "/projects/project-2.png",
-    link: "https://example.com",
+      'Sajha Real Estate Investment Company Pvt. Ltd. was established to make the real estate business systematic, reliable, and accessible to everyone. It is a company formed by young and energetic business personalities.',
+    image: "/projects/sajha.png",
+    link: "https://sajhainvestment.com/",
   },
   {
-    title: "Space Themed Website",
+    title: "BRIKSHYA PRODUCTION",
     description:
-      'Embark on an interstellar journey with my "Space Themed Website", a mesmerizing space-themed website that invites you to explore the cosmic wonders beyond our world. Immerse yourself in an awe-inspiring digital experience that blends cutting-edge design with the mysteries of the universe.',
-    image: "/projects/project-3.png",
-    link: "https://example.com",
+      'Brikshya Production team is a business that provides the physical basis for works in the fields of performing arts, new media art, film, television, radio, comics, interactive arts, video games, websites, and video.',
+    image: "/projects/b1.png",
+    link: "https://brikshya.com",
+  },
+  {
+    title: "Suchana Park",
+    description:
+      'Suchana Park offers unparalleled convenience and information, all within a single application. Whether youre seeking news, writing opportunities, language tools, financial information, or market updates, Suchana Park has it all...',
+    image: "/projects/suchana.png",
+    link: "https://suchanapark.com",
   },
 ] as const;
 

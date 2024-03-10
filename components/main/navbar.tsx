@@ -12,16 +12,16 @@ export const Navbar = () => {
           className="h-auto w-auto flex flex-row items-center"
         >
           <Image
-            src="/logo.png"
+            src="/logo1.png"
             alt="Logo"
-            width={70}
-            height={70}
+            width={50}
+            height={50}
             draggable={false}
             className="cursor-pointer hover:animate-slowspin"
           />
-          <div className="font-bold ml-[10px] hidden md:block text-gray-300">
+          {/* <div className="font-bold ml-[10px] hidden md:block text-gray-300">
             ewumesh
-          </div>
+          </div> */}
         </Link>
 
         <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
