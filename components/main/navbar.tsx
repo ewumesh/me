@@ -12,10 +12,10 @@ export const Navbar = () => {
           className="h-auto w-auto flex flex-row items-center"
         >
           <Image
-            src="/logo1.png"
+            src="/logo3.png"
             alt="Logo"
-            width={50}
-            height={50}
+            width={80}
+            height={80}
             draggable={false}
             className="cursor-pointer hover:animate-slowspin"
           />
