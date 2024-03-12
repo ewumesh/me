@@ -398,6 +398,10 @@ export const NAV_LINKS = [
     title: "Contact",
     link: "",
   },
+  {
+    title: "Tools",
+    link: "",
+  },
 ] as const;
 
 export const LINKS = {
