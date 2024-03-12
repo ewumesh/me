@@ -286,6 +286,36 @@ export const PROJECTS = [
     image: "/projects/suchana.png",
     link: "https://suchanapark.com",
   },
+  {
+    title: "The Healthhub Nepal",
+    description:
+      'Discover Health Hub Nepal, your comprehensive guide to leading a healthy lifestyle. Our platform offers a wealth of information on nutrition, fitness, and overall well-being, tailored specifically for residents of Nepal.',
+    image: "/projects/health.png",
+    link: "https://healthhubnepal.netlify.app/home",
+  },
+  {
+    title: "Allpasal",
+    description:
+      'Allpasal is an organization with a clear objective to manage, and distribute the goods produced from the production company to the markets. Allpasal, aims to distribute goods in the easiest ,cheapest and most convenient ways to the customers. Despite Nepals rich resources and flourishing markets, 80% of our Nepalese.. ',
+    image: "/projects/a1.png",
+    link: "https://allpasal.com",
+  },
+
+  {
+    title: "Rooms24",
+    description:
+      'Your ultimate destination for flexible and secure online hotel bookings, where a seamless User Interface (UI) meets an unparalleled User Experience (UX). Our innovative platform not only caters to traditional daily bookings but also introduces a unique and flexible approach with hourly bookings.',
+    image: "/projects/room.png",
+    link: "https://rooms24.netlify.app",
+  },
+
+  {
+    title: "Onlot Express",
+    description:
+      'Omlot Express is a software application that helps businesses and individuals manage their supply chain operations, including transportation, warehousing, inventory management, and delivery. The app can be used by logistics companies, manufacturers, retailers, and wholesalers to streamline their operations and improve efficiency.',
+    image: "/projects/o1.png",
+    link: "",
+  },
 ] as const;
 
 export const FOOTER_DATA = [
