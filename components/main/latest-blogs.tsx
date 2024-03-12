@@ -6,7 +6,7 @@ export const LatestBlogs = () => {
 <section>
     <div  className="flex flex-col items-center justify-center py-216">
     <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
-        Services
+        What We offer
       </h1>
         <div className="mx-auto px-20 max-w-10xl text-gray-500">
         
