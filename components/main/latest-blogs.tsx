@@ -76,7 +76,7 @@ export const LatestBlogs = () => {
                             </div>
                             <div className="mt-14 text-center relative z-10 space-y-2">
                                 <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Faster than light</h2> 
-                                <p className="dark:text-gray-300 text-gray-700">Information traveling beyond the speed of light, which is theoretically impossible according to Einstein's theory of relativity.</p>
+                                <p className="dark:text-gray-300 text-gray-700">Information traveling beyond the speed of light, which is theoretically impossible according to Einsteis theory of relativity.</p>
                             </div>
                         </div>
                     </div>
