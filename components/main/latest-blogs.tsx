@@ -45,7 +45,7 @@ export const LatestBlogs = () => {
                             </div>
                             <div className="mt-6 text-center relative z-10 space-y-2">
                                 <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Secure by default</h2>
-                                <p className="dark:text-gray-300 text-gray-700">Provident fugit and vero voluptate. magnam magni doloribus dolores voluptates a sapiente nisi.</p>
+                                <p className="dark:text-gray-300 text-gray-700">It encrypts data, validates inputs, and implements strong authentication. It follows secure development practices, regularly updates for vulnerabilities, and monitors for suspicious activity.</p>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@ export const LatestBlogs = () => {
                             </div>
                             <div className="mt-14 text-center relative z-10 space-y-2">
                                 <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Faster than light</h2>
-                                <p className="dark:text-gray-300 text-gray-700">Provident fugit vero voluptate. magnam magni doloribus dolores voluptates inventore nisi.</p>
+                                <p className="dark:text-gray-300 text-gray-700">Information traveling beyond the speed of light, which is theoretically impossible according to Einstein's theory of relativity.</p>
                             </div>
                         </div>
                     </div>
@@ -89,8 +89,8 @@ export const LatestBlogs = () => {
                                     </svg>
                                     </div>
                                 <div className="space-y-2">
-                                    <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Faster than light</h2>
-                                    <p className="dark:text-gray-300 text-gray-700">Provident fugit vero voluptate. Voluptates a sapiente inventore nisi.</p>
+                                    <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Trending</h2>
+                                    <p className="dark:text-gray-300 text-gray-700">Increased downloads, usage, and social media mentions over a specific period of time.</p>
                                 </div>
                             </div>
                             <div className="overflow-hidden relative mt-6 sm:mt-auto h-fit -mb-[34px] -mr-[34px] sm:ml-6 py-6 p-6 border rounded-tl-lg dark:bg-white/5 dark:border-white/10">
@@ -124,8 +124,8 @@ export const LatestBlogs = () => {
                                     </svg>
                                     </div>
                                 <div className="space-y-2">
-                                    <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Keep your loved ones safe</h2>
-                                    <p className="dark:text-gray-300 text-gray-700">Voluptate. magnam magni doloribus dolores voluptates a sapiente inventore nisi.</p>
+                                    <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Keep safe your data</h2>
+                                    <p className="dark:text-gray-300 text-gray-700">Ensure data safety through encryption, backups, and robust access controls.</p>
                                 </div>
                             </div>
                             <div className="mt-6 relative sm:-mr-[--card-padding] sm:-my-8 before:absolute before:w-px before:inset-0 before:mx-auto before:bg-gray-200 dark:before:bg-gray-800">
