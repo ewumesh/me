@@ -1,3 +1,4 @@
+import { Contact } from "@/components/main/contact";
 import { Encryption } from "@/components/main/encryption";
 import { Hero } from "@/components/main/hero";
 import { LatestBlogs } from "@/components/main/latest-blogs";
@@ -15,6 +16,7 @@ export default function Home() {
         <Services />
         <Projects />
         <LatestBlogs />
+        <Contact />
       </div>
     </main>
   );
