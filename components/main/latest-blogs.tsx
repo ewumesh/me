@@ -4,7 +4,7 @@
 export const LatestBlogs = () => {
     return (
 <section className="">
-    <div className="container px-20 py-12 mx-auto">
+    <div className=" px-20 py-12 mx-auto">
         <div className="text-center ">
             <p className="font-medium text-blue-500 dark:text-blue-400">Contact us</p>
             <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">We’d love to hear from you</h1>
