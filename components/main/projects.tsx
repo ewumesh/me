@@ -12,7 +12,7 @@ export const Projects = () => {
       </h1>
       {/* grid grid-cols-4 gap-4 */}
       {/* flex flex-col md:flex-row */}
-      <div className="h-full w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-4 md:px-20">
+      <div className="h-full w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10  px-20">
         {PROJECTS.map((project) => (
           <ProjectCard
             key={project.title}
