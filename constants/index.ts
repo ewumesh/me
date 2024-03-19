@@ -259,12 +259,47 @@ export const OTHER_SKILL = [
 
 export const PROJECTS = [
   {
+    title: "Rooms24",
+    description:
+      'Your ultimate destination for flexible and secure online hotel bookings, where a seamless User Interface (UI) meets an unparalleled User Experience (UX). Our innovative platform not only caters to traditional daily bookings but also introduces a unique and flexible approach with hourly bookings.',
+    image: "/projects/room.png",
+    link: "https://rooms24.netlify.app",
+  },
+  {
+    title: "The Healthhub Nepal",
+    description:
+      'Discover Health Hub Nepal, your comprehensive guide to leading a healthy lifestyle. Our platform offers a wealth of information on nutrition, fitness, and overall well-being, tailored specifically for residents of Nepal.',
+    image: "/projects/health.png",
+    link: "https://healthhubnepal.netlify.app/home",
+  },
+  {
     title: "Venio Systems",
     description:
       'Venio is the best integrated eDiscovery platform on the market, and OPTiMO offers that best-in-breed technology as a managed service to streamline the eDiscovery process, lower costs, and provide a predictable pricing model.',
     image: "/projects/v1.png",
     link: "https://www.veniosystems.com/",
   },
+  {
+    title:'Affixlink',
+    description:'Tap to connect! Share your social media links; Share your book and files; Share your images and videos.',
+    image: "/projects/app.png",
+    link: "https://admin.affixlink.app/auth/login",
+  },
+
+  {
+    title:'Demat',
+    description:'DEMAT is a Gurkha Finance authorised demat account cloud registration platform where the user can perform all registration, approval, payment, etc throught the application.',
+    image: "/projects/gfl.png",
+    link: "https://demat.gurkhasfinance.com.np/",
+  },
+  {
+    title:'Trekcard',
+    description:'Trekking Recreation Expedition in Khumbu made safer with Trekcard.',
+    image: "/projects/tcard.png",
+    link: "https://trekcard.app/",
+  },
+
+
   {
     title: "Sajha Investment",
     description:
@@ -286,13 +321,7 @@ export const PROJECTS = [
     image: "/projects/suchana.png",
     link: "https://suchanapark.com",
   },
-  {
-    title: "The Healthhub Nepal",
-    description:
-      'Discover Health Hub Nepal, your comprehensive guide to leading a healthy lifestyle. Our platform offers a wealth of information on nutrition, fitness, and overall well-being, tailored specifically for residents of Nepal.',
-    image: "/projects/health.png",
-    link: "https://healthhubnepal.netlify.app/home",
-  },
+
   {
     title: "Allpasal",
     description:
@@ -301,13 +330,7 @@ export const PROJECTS = [
     link: "https://allpasal.com",
   },
 
-  {
-    title: "Rooms24",
-    description:
-      'Your ultimate destination for flexible and secure online hotel bookings, where a seamless User Interface (UI) meets an unparalleled User Experience (UX). Our innovative platform not only caters to traditional daily bookings but also introduces a unique and flexible approach with hourly bookings.',
-    image: "/projects/room.png",
-    link: "https://rooms24.netlify.app",
-  },
+
 
   {
     title: "Onlot Express",
@@ -316,7 +339,26 @@ export const PROJECTS = [
     image: "/projects/o1.png",
     link: "",
   },
+  {
+    title: "Nrna Members",
+    description:
+      'An umbrella organization for Nepali Diaspora around the world, NRNA is a global network for people of Nepali origin, working to address their interests, concerns, and welfare.',
+    image: "/projects/nr.png",
+    link: "https://members.globalnrna.org/login",
+  },
 ] as const;
+
+export const PARTNERS = [
+  {id:1, name:'Omlot Express', image:'/partners/omlot.png', link:''},
+  {id:2, name:'Rooms24', image:'/partners/rooms24.jpg', link:''},
+  {id:3, name:'The Healthhub Nepal', image:'/partners/health.png', link:''},
+  {id:4, name:'Allpasal', image:'/partners/allpasal.jpg', link:''},
+  {id:5, name:'GFL', image:'/partners/gfl.png', link:''},
+  {id:6, name:'NRNA', image:'/partners/nrna.png', link:''},
+  {id:7, name:'Khumbu', image:'/partners/khumbu.png', link:''},
+  {id:8, name:'Affixlink', image:'/partners/affixlink.png', link:''},
+  {id:9, name:'NRNAA', image:'/partners/nrnaa.png', link:''},
+] as const
 
 export const FOOTER_DATA = [
   {
@@ -388,7 +430,7 @@ export const NAV_LINKS = [
   },
   {
     title: "Blogs",
-    link: "/",
+    link: "/blogs",
   },
   {
     title: "News",
