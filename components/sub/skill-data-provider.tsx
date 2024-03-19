@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
 type SkillDataProviderProps = {
@@ -39,7 +38,7 @@ export const SkillDataProvider = ({
       custom={index}
       transition={{ delay: index * animationDelay }}
     >
-      <Image src={`/skills/${src}`} width={width} height={height} alt={name} />
+      <img src={`/skills/${src}`} width={width} height={height} alt={name} />
     </motion.div>
   );
 };

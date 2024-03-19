@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 import { slideInFromTop } from "@/lib/motion";
 
@@ -23,14 +22,14 @@ export const Encryption = () => {
 
       <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto">
         <div className="flex flex-col items-center group cursor-pointer w-auto h-auto">
-          <Image
+          <img
             src="/lock-top.png"
             alt="Lock top"
             width={50}
             height={50}
             className="translate-y-5 transition-all duration-200 group-hover:translate-y-11"
           />
-          <Image
+          <img
             src="/lock-main.png"
             alt="Lock main"
             width={70}

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { LINKS, NAV_LINKS, SOCIALS } from "@/constants";
@@ -11,7 +10,7 @@ export const Navbar = () => {
           href="/"
           className="h-auto w-auto flex flex-row items-center"
         >
-          <Image
+          <img
             src="/logo3.png"
             alt="Logo"
             width={80}
