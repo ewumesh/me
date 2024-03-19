@@ -39,7 +39,7 @@ export default function ViewBlog() {
                             guide</a> to explore the elements by including the CDN files into your project. But if you want
                             to build a project with Flowbite I recommend you to follow the build tools steps so that you can
                             purge and minify the generated CSS.</p>
-                        <p className="dark:text-white">You'll also receive a lot of useful application UI, marketing UI, and e-commerce pages that can help
+                        <p className="dark:text-white">Youll also receive a lot of useful application UI, marketing UI, and e-commerce pages that can help
                             you get started with your projects even faster. You can check out this <a
                                 href="https://flowbite.com/docs/components/tables/">comparison table</a> to better understand
                             the differences between the open-source and pro version of Flowbite.</p>
@@ -62,7 +62,7 @@ export default function ViewBlog() {
                         <h3 className="dark:text-white">Laying the groundwork for best design</h3>
                         <p className="dark:text-white">Before going digital, you might benefit from scribbling down some ideas in a sketchbook. This way,
                             you can think things through before committing to an actual design project.</p>
-                        <p className="dark:text-white">Let's start by including the CSS file inside the <code>head</code> tag of your HTML.</p>
+                        <p className="dark:text-white">Lets start by including the CSS file inside the <code>head</code> tag of your HTML.</p>
                         <h3 className="dark:text-white">Understanding typography</h3>
                         <h4 className="dark:text-white">Type properties</h4>
                         <p className="dark:text-white">A typeface is a collection of letters. While each letter is unique, certain shapes are shared across
@@ -99,7 +99,7 @@ export default function ViewBlog() {
                             <p className="dark:text-white">A serif is a small shape or projection that appears at the beginning or end of a stroke on a letter.
                                 Typefaces with serifs are called serif typefaces. Serif fonts are classNameified as one of the
                                 following:</p>
-                            <pre><code className="language-html dark:text--white">&lt;dl className="grid grid-cols-2 gap-8 max-w-screen-md text-gray-900 sm:grid-cols-3 dark:text-white"&gt;
+                            {/* <pre><code className="language-html dark:text--white">&lt;dl className="grid grid-cols-2 gap-8 max-w-screen-md text-gray-900 sm:grid-cols-3 dark:text-white"&gt;
                                 &lt;div className="flex flex-col justify-center items-center"&gt;
                                 &lt;dt className="mb-2 text-3xl font-extrabold"&gt;73M+&lt;/dt&gt;
                                 &lt;dd className="text-lg font-normal text-gray-500 dark:text-gray-400"&gt;developers&lt;/dd&gt;
@@ -113,7 +113,7 @@ export default function ViewBlog() {
                                 &lt;dd className="text-lg font-normal text-gray-500 dark:text-gray-400"&gt;organizations&lt;/dd&gt;
                                 &lt;/div&gt;
                                 &lt;/dl&gt;
-                            </code></pre>
+                            </code></pre> */}
                             <h4 className="dark:text-white">Table example</h4>
                             <p className="dark:text-white">A serif is a small shape or projection that appears at the beginning or end of a stroke on a letter.
                             </p>
