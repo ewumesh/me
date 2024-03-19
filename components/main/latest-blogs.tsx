@@ -1,5 +1,5 @@
 
-
+import Image from "next/image";
 
 export const LatestBlogs = () => {
     async () => {
@@ -33,7 +33,7 @@ export const LatestBlogs = () => {
               <p className="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
               <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-4">
-                      <img className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Leos avatar" />
+                      <Image className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Leos avatar" />
                       <span className="font-medium dark:text-white">
                           Umesh Thapa
                       </span>
@@ -56,7 +56,7 @@ export const LatestBlogs = () => {
               <p className="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
               <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-4">
-                      <img className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green avatar" />
+                      <Image className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green avatar" />
                       <span className="font-medium dark:text-white">
                           Umesh Thapa
                       </span>
@@ -79,7 +79,7 @@ export const LatestBlogs = () => {
               <p className="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
               <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-4">
-                      <img className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Leos avatar" />
+                      <Image className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Leos avatar" />
                       <span className="font-medium dark:text-white">
                           Umesh Thapa
                       </span>
@@ -102,7 +102,7 @@ export const LatestBlogs = () => {
               <p className="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
               <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-4">
-                      <img className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green avatar" />
+                      <Image className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green avatar" />
                       <span className="font-medium dark:text-white">
                           Umesh Thapa
                       </span>

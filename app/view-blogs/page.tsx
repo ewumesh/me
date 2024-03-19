@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function ViewBlog() {
     return (
         <section>
@@ -7,7 +8,7 @@ export default function ViewBlog() {
                         <header className="mb-4 lg:mb-6 not-format">
                             <address className="flex items-center mb-6 not-italic">
                                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                    <img className="mr-4 w-16 h-16 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos" />
+                                    <Image className="mr-4 w-16 h-16 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos" />
                                         <div>
                                             <a href="#" rel="author" className="text-xl font-bold text-gray-900 dark:text-white">Jese Leos</a>
                                             <p className="text-base text-gray-500 dark:text-gray-400">Graphic Designer, educator & CEO Flowbite</p>
@@ -26,7 +27,7 @@ export default function ViewBlog() {
                             Flowbite</a>. It comes with the most commonly used UI components, such as buttons, navigation
                             bars, cards, form elements, and more which are conveniently built with the utility classNamees from
                             Tailwind CSS.</p>
-                        <figure><img src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png" alt="" />
+                        <figure><Image src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png" alt="" />
                             <figcaption>Digital art by Anonymous</figcaption>
                         </figure>
                         <h2 className="dark:text-white">Getting started with Flowbite</h2>
@@ -83,7 +84,7 @@ export default function ViewBlog() {
                             <li className="dark:text-white">Low contrast between thick and thin strokes</li>
                             <li className="dark:text-white">Diagonal stress in the strokes</li>
                             <li className="dark:text-white">Slanted serifs on lower-case ascenders</li>
-                        </ul><img src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-2.png" alt="" />
+                        </ul><Image src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-2.png" alt="" />
                             <ol>
                                 <li className="dark:text-white">Low contrast between thick and thin strokes</li>
                                 <li className="dark:text-white">Diagonal stress in the strokes</li>
@@ -194,7 +195,7 @@ export default function ViewBlog() {
                                 <article className="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
                                     <footer className="flex justify-between items-center mb-2">
                                         <div className="flex items-center">
-                                            <p className="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white"><img
+                                            <p className="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white"><Image
                                                 className="mr-2 w-6 h-6 rounded-full"
                                                 src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
                                                 alt="Michael Gough" />Michael Gough</p>
@@ -244,7 +245,7 @@ export default function ViewBlog() {
                                 <article className="p-6 mb-6 ml-6 lg:ml-12 text-base bg-white rounded-lg dark:bg-gray-900">
                                     <footer className="flex justify-between items-center mb-2">
                                         <div className="flex items-center">
-                                            <p className="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white"><img
+                                            <p className="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white"><Image
                                                 className="mr-2 w-6 h-6 rounded-full"
                                                 src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                                                 alt="Jese Leos" />Jese Leos</p>
@@ -292,7 +293,7 @@ export default function ViewBlog() {
                                 <article className="p-6 mb-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
                                     <footer className="flex justify-between items-center mb-2">
                                         <div className="flex items-center">
-                                            <p className="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white"><img
+                                            <p className="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white"><Image
                                                 className="mr-2 w-6 h-6 rounded-full"
                                                 src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
                                                 alt="Bonnie Green"/>Bonnie Green</p>
@@ -340,7 +341,7 @@ export default function ViewBlog() {
                                 <article className="p-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900">
                                     <footer className="flex justify-between items-center mb-2">
                                         <div className="flex items-center">
-                                            <p className="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white"><img
+                                            <p className="inline-flex items-center mr-3 font-semibold text-sm text-gray-900 dark:text-white"><Image
                                                 className="mr-2 w-6 h-6 rounded-full"
                                                 src="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
                                                 alt="Helene Engels" />Helene Engels</p>
@@ -395,7 +396,7 @@ export default function ViewBlog() {
                     <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
                         <article className="max-w-xs">
                             <a href="#">
-                                <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" className="mb-5 rounded-lg" alt="Image 1" />
+                                <Image src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" className="mb-5 rounded-lg" alt="Image 1" />
                             </a>
                             <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
                                 <a href="#">Our first office</a>
@@ -407,7 +408,7 @@ export default function ViewBlog() {
                         </article>
                         <article className="max-w-xs">
                             <a href="#">
-                                <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png" className="mb-5 rounded-lg" alt="Image 2" />
+                                <Image src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png" className="mb-5 rounded-lg" alt="Image 2" />
                             </a>
                             <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
                                 <a href="#">Enterprise design tips</a>
@@ -419,7 +420,7 @@ export default function ViewBlog() {
                         </article>
                         <article className="max-w-xs">
                             <a href="#">
-                                <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" className="mb-5 rounded-lg" alt="Image 3" />
+                                <Image src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" className="mb-5 rounded-lg" alt="Image 3" />
                             </a>
                             <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
                                 <a href="#">We partnered with Google</a>
@@ -431,7 +432,7 @@ export default function ViewBlog() {
                         </article>
                         <article className="max-w-xs">
                             <a href="#">
-                                <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-4.png" className="mb-5 rounded-lg" alt="Image 4" />
+                                <Image src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-4.png" className="mb-5 rounded-lg" alt="Image 4" />
                             </a>
                             <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
                                 <a href="#">Our first project with React</a>
