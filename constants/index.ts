@@ -351,13 +351,13 @@ export const PROJECTS = [
 export const PARTNERS = [
   {id:1, name:'Omlot Express', image:'/partners/omlot.png', link:''},
   {id:2, name:'Rooms24', image:'/partners/rooms24.jpg', link:''},
-  {id:3, name:'The Healthhub Nepal', image:'/partners/health.png', link:''},
-  {id:4, name:'Allpasal', image:'/partners/allpasal.jpg', link:''},
-  {id:5, name:'GFL', image:'/partners/gfl.png', link:''},
-  {id:6, name:'NRNA', image:'/partners/nrna.png', link:''},
-  {id:7, name:'Khumbu', image:'/partners/khumbu.png', link:''},
-  {id:8, name:'Affixlink', image:'/partners/affixlink.png', link:''},
-  {id:9, name:'NRNAA', image:'/partners/nrnaa.png', link:''},
+  {id:3, name:'The Healthhub Nepal', image:'/partners/health.png', link:'https://healthhubnepal.netlify.app/home'},
+  {id:4, name:'Allpasal', image:'/partners/allpasal.jpg', link:'https://allpasal.com/'},
+  {id:5, name:'GFL', image:'/partners/gfl.png', link:'https://demat.gurkhasfinance.com.np/'},
+  {id:6, name:'NRNA', image:'/partners/nrna.png', link:'https://globalnrna.org/'},
+  {id:7, name:'Khumbu', image:'/partners/khumbu.png', link:'https://trekcard.app/'},
+  {id:8, name:'Affixlink', image:'/partners/affixlink.png', link:'https://admin.affixlink.app/dashboard/home'},
+  {id:9, name:'NRNAA', image:'/partners/nrnaa.png', link:'https://members.globalnrna.org/login'},
 ] as const
 
 export const FOOTER_DATA = [
