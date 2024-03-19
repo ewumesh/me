@@ -160,18 +160,18 @@ export default function ViewBlog() {
                             </table>
                             <h3 className="dark:text-white">Best practices for setting up your prototype</h3>
                             <p className="dark:text-white"><strong>Low fidelity or high fidelity?</strong> Fidelity refers to how close a prototype will be to
-                                the real deal. If you’re simply preparing a quick visual aid for a presentation, a low-fidelity
+                                the real deal. If youre simply preparing a quick visual aid for a presentation, a low-fidelity
                                 prototype — like a wireframe with placeholder images and some basic text — would be more than
-                                enough. But if you’re going for more intricate usability testing, a high-fidelity prototype — with
+                                enough. But if youre going for more intricate usability testing, a high-fidelity prototype — with
                                 on-brand colors, fonts and imagery — could help get more pointed results.</p>
                             <p className="dark:text-white"><strong>Consider your user</strong>. To create an intuitive user flow, try to think as your user
                                 would when interacting with your product. While you can fine-tune this during beta testing,
-                                considering your user’s needs and habits early on will save you time by setting you on the right
+                                considering your users needs and habits early on will save you time by setting you on the right
                                 path.</p>
                             <p className="dark:text-white"><strong>Start from the inside out</strong>. A nice way to both organize your tasks and create more
-                                user-friendly prototypes is by building your prototypes ‘inside out’. Start by focusing on what will
+                                user-friendly prototypes is by building your prototypes inside out. Start by focusing on what will
                                 be important to your user, like a Buy now button or an image gallery, and list each element by order
-                                of priority. This way, you’ll be able to create a prototype that puts your users’ needs at the heart
+                                of priority. This way, youll be able to create a prototype that puts your users needs at the heart
                                 of your design.</p>
                             <p className="dark:text-white">And there you have it! Everything you need to design and share prototypes — right in Flowbite Figma.
                             </p>
