@@ -66,7 +66,7 @@ export default function Blogs() {
 		</a>
 		<div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{allBlogs.slice(1,9).map((blog, index) => (
-			<a rel="noopener noreferrer" href={'/blog/' + convertToSlug(blog.title)} className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
+			<a key={index} rel="noopener noreferrer" href={'/blog/' + convertToSlug(blog.title)} className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
 				<img alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src={'https://source.unsplash.com/random/480x360?'+index} />
 				<div className="p-6 space-y-2">
 					<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">{blog.title}</h3>
