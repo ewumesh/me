@@ -1,12 +1,47 @@
+"use client";
 
+import { slideInFromTop } from "@/lib/motion";
+import { motion } from "framer-motion";
+import { SparklesIcon } from "@heroicons/react/24/solid";
+
+import {
+  slideInFromLeft,
+  slideInFromRight
+} from "@/lib/motion";
 
 export const Services = () => {
     return (
         <section id="app-service">
         <div className="flex flex-col items-center justify-center py-216">
-            <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
+            {/* <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
                 What We offer
-            </h1>
+            </h1> */}
+
+<div className="w-full h-auto flex flex-col items-center justify-center">
+      <motion.div
+        variants={slideInFromTop}
+        className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
+      >
+        <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
+        <h1 className="Welcome-text text-[13px]">
+        Services
+        </h1>
+      </motion.div>
+
+      <motion.div
+        variants={slideInFromLeft(0.5)}
+        className="text-[30px] text-white font-medium mt-[10px] text-center mb-[15px]"
+      >
+        What we offer
+      </motion.div>
+
+      <motion.div
+        variants={slideInFromRight(0.5)}
+        className="cursive text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
+      >
+Solutions tailored to meet diverse needs and exceed expectations.
+      </motion.div>
+    </div>
             <div className="mx-auto px-20 max-w-10xl text-gray-500">
 
                 <div className="relative">

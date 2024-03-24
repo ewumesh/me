@@ -1,13 +1,44 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 import { slideInFromTop } from "@/lib/motion";
+import { motion } from "framer-motion";
+import { SparklesIcon } from "@heroicons/react/24/solid";
+
+import {
+  slideInFromLeft,
+  slideInFromRight
+} from "@/lib/motion";
 
 export const Encryption = () => {
   return (
+    <section>
+      <div className="w-full h-auto flex flex-col items-center justify-center">
+      <motion.div
+        variants={slideInFromTop}
+        className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
+      >
+        <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
+        <h1 className="Welcome-text text-[13px]">
+        Optimization
+        </h1>
+      </motion.div>
+
+      <motion.div
+        variants={slideInFromLeft(0.5)}
+        className="text-[30px] text-white font-medium mt-[10px] text-center mb-[15px]"
+      >
+        Performance And Security
+      </motion.div>
+
+      {/* <motion.div
+        variants={slideInFromRight(0.5)}
+        className="cursive text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
+      >
+        We use an agile approach to test assumptions and connect with the needs of your audience early and often.
+      </motion.div> */}
+    </div>
     <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full -z-20">
-      <div className="absolute w-auto h-auto top-0 z-[5]">
+      {/* <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}
           className="text-[40px] font-medium text-center text-gray-200"
@@ -18,7 +49,7 @@ export const Encryption = () => {
           </span>{" "}
           security.
         </motion.div>
-      </div>
+      </div> */}
 
       <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto">
         <div className="flex flex-col items-center group cursor-pointer w-auto h-auto">
@@ -62,5 +93,6 @@ export const Encryption = () => {
         </video>
       </div>
     </div>
+    </section>
   );
 };

@@ -3,6 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { formatDistance, subDays } from 'date-fns';
+import { motion } from "framer-motion";
+import { SparklesIcon } from "@heroicons/react/24/solid";
+
+import {
+  slideInFromLeft,
+  slideInFromRight,
+  slideInFromTop,
+} from "@/lib/motion";
 
 function getTimeDifference(dateString: string) {
     let a = formatDistance(subDays(dateString, 3), new Date(), { addSuffix: true })
@@ -58,10 +66,35 @@ export const LatestBlogs = () => {
         <section>
             {latestBlogs.length > 0 && (
                 <div className="py-8 px-20">
-                    <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
+                    {/* <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
                         <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Blog</h2>
                         <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
-                    </div>
+                    </div> */}
+                    <div className="w-full h-auto flex flex-col items-center justify-center">
+      <motion.div
+        variants={slideInFromTop}
+        className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
+      >
+        <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
+        <h1 className="Welcome-text text-[13px]">
+          Read More Learn More
+        </h1>
+      </motion.div>
+
+      <motion.div
+        variants={slideInFromLeft(0.5)}
+        className="text-[30px] text-white font-medium mt-[10px] text-center mb-[15px]"
+      >
+        Latest Blogs
+      </motion.div>
+
+      <motion.div
+        variants={slideInFromRight(0.5)}
+        className="cursive text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
+      >
+        Unlocking the Secrets of Productivity.
+      </motion.div>
+    </div>
                     <div className="grid gap-8 lg:grid-cols-2">
                         {latestBlogs.map((blog, index) => (
                             <article key={index} className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
