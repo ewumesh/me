@@ -16,7 +16,6 @@ export const Partners = () => {
   return (
     <section className="px-20 my-5">
 <div className="mx-auto max-w-screen-sm text-center">
-          {/* <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Trusted By</h2> */}
           <div className="w-full h-auto flex flex-col items-center justify-center">
       <motion.div
         variants={slideInFromTop}
@@ -32,14 +31,14 @@ export const Partners = () => {
         variants={slideInFromLeft(0.5)}
         className="text-[30px] text-white font-medium mt-[10px] text-center mb-[15px]"
       >
-        Trusted By
+        With Great Outcomes.
       </motion.div>
 
       <motion.div
         variants={slideInFromRight(0.5)}
         className="cursive text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
       >
-        Establishing trust through transparency, reliability, and a relentless pursuit of customer satisfaction.
+       Our customers have gotten offers from awesome companies.
       </motion.div>
     </div>
       </div>

@@ -5,6 +5,7 @@ import { LatestBlogs } from "@/components/main/latest-blogs";
 import { Projects } from "@/components/main/projects";
 import { Services } from "@/components/main/services";
 import { Skills } from "@/components/main/skills";
+import { MQ } from "@/components/main/mq";
 
 export default function Home() {
   return (
@@ -16,7 +17,8 @@ export default function Home() {
         <Services />
         <Projects />
         <LatestBlogs />
-        <Partners />
+        {/* <Partners /> */}
+        <MQ/>
       </div>
     </main>
   );
