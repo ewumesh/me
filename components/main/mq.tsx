@@ -45,8 +45,8 @@ export const MQ = () => {
           </Marquee>
           <Marquee>
             <MarqueeGroup2>
-              {row2.map((el) => (
-                <ImageGroup>
+              {row2.map((el, index) => (
+                <ImageGroup key={index}>
                   <Image src={el} />
                 </ImageGroup>
               ))}
