@@ -28,7 +28,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         )}
       >
         <Analytics/>
-        {/* <StarsCanvas /> */}
+        <StarsCanvas />
         <Navbar />
         {children}
         <Footer />
