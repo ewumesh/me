@@ -29,15 +29,15 @@ export const MQ = () => {
           <Note>Our customers have gotten offers from awesome companies.</Note>
           <Marquee>
             <MarqueeGroup>
-              {row1.map((el) => (
-                <ImageGroup>
+              {row1.map((el, index) => (
+                <ImageGroup key={index}>
                   <Image src={el} />
                 </ImageGroup>
               ))}
             </MarqueeGroup>
             <MarqueeGroup>
-              {row1.map((el) => (
-                <ImageGroup>
+              {row1.map((el, index) => (
+                <ImageGroup kry={index}>
                   <Image src={el} />
                 </ImageGroup>
               ))}
