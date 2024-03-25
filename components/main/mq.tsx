@@ -31,14 +31,14 @@ export const MQ = () => {
             <MarqueeGroup>
               {row1.map((el, index) => (
                 <ImageGroup key={index}>
-                  <Image src={el} />
+                  <Image src={el} alt="" />
                 </ImageGroup>
               ))}
             </MarqueeGroup>
             <MarqueeGroup>
               {row1.map((el, index) => (
-                <ImageGroup kry={index}>
-                  <Image src={el} />
+                <ImageGroup key={index}>
+                  <Image src={el} alt="" />
                 </ImageGroup>
               ))}
             </MarqueeGroup>
