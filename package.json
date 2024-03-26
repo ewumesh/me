@@ -10,8 +10,13 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@mdxeditor/editor": "^2.18.0",
+    "@next/mdx": "^14.1.4",
     "@react-three/drei": "^9.93.0",
     "@react-three/fiber": "^8.15.13",
+    "@types/mdx": "^2.0.12",
     "@vercel/analytics": "^1.2.2",
     "axios": "^1.6.8",
     "date-fns": "^3.6.0",

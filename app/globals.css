@@ -66,3 +66,15 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Editor UI */
+.mdxeditor {
+  background-color: #1f2937 !important;
+  border-radius: 10px !important;
+  /* height:200px !important; */
+}
+
+._contentEditable_19o4e_352 {
+  min-height:500px !important;
+  overflow-y: auto;
+}
