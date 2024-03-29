@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 const EditorComp = dynamic(() => import('../write-blog/editor'), { ssr: false });
 
 const markdown = `
-Hello **world**! 'hbhbjhb' 
+.....
 `
 
 export default function WriteBlog() {
@@ -30,11 +30,6 @@ export default function WriteBlog() {
   const handleSubmit = async (event:any) => {
     event.preventDefault(); // Prevents the default form submission behavior
 
-    // Access form values here
-    console.log('Form Values:', title);
-    console.log('Thumbnail:', thumbnail);
-    console.log('content', content);
-
     const formData = new FormData();
     formData.append("title", title);
     if (thumbnail !== null) {
@@ -43,26 +38,22 @@ export default function WriteBlog() {
     formData.append("content", content);
 
     try {
-      const response = await fetch("https://me-server-git-main-ewumeshs-projects.vercel.app/api/blog/", {
-        method: "POST",
+      const response = await fetch("https://me-server-git-main-ewumeshs-projects.vercel.app/api/blog", {
+       method:"POST",
         body: formData,
       });
 
       if (response.ok) {
         console.log("Blog post created successfully!");
-        // Optionally, you can reset form values or perform other actions here
+        setTitle('');
+        setContent('');
+        setThumbnail(null);
       } else {
         console.error("Failed to create blog post:", response.statusText);
       }
     } catch (error) {
       console.error("Error:", error);
     }
-
-    // Optionally, you can reset form values or perform other actions here
-
-    // For demonstration purposes, let's reset form values
-    // setFormValues({});
-    // setThumbnail(null);
   };
 
  
