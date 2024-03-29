@@ -78,3 +78,18 @@ html {
   min-height:500px !important;
   overflow-y: auto;
 }
+
+
+/* Write Blogs tags input */
+.badge {
+  display: inline !important;
+    margin: 8px 8px !important;
+    padding: 4px;
+    border: 1px solid #ffffff36;
+    border-radius: 6px;
+}
+
+.badge> svg {
+  fill: #000 !important;
+}
+/* End  */
