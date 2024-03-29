@@ -44,7 +44,7 @@ export default function WriteBlog() {
     formData.append("tags", JSON.stringify(tags));
 
     try {
-      const response = await fetch("http://localhost:3001/api/blog", {
+      const response = await fetch("https://me-server-git-main-ewumeshs-projects.vercel.app/api/blog", {
        method:"POST",
         body: formData,
       });
