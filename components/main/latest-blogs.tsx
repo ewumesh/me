@@ -46,26 +46,12 @@ function extractTextFromHTML(html: string): string {
 
 export const LatestBlogs = () => {
     const [latestBlogs, setLatestBlogs] = useState<any[]>([]);
-    const [feedDetails, setFeedDetails] = useState<any>({});
-
-    const [myLatestBlogs, setMyLatestBlogs] = useState<any[]>([]);
 
     useEffect(() => {
-        const fetchLatestBlogs = async () => {
-            try {
-                const res = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ewumesh');
-                setLatestBlogs(res.data.items);
-                setFeedDetails(res.data.feed);
-            } catch (error) {
-                console.error("Error fetching latest blogs:", error);
-            }
-        };
-
         const getBlogs = async () => {
             try {
                 const res = await axios.get('https://me-server-git-main-ewumeshs-projects.vercel.app/api/latest-blogs');
-                setMyLatestBlogs(res.data);
-                console.log(myLatestBlogs, 'MINE ')
+                setLatestBlogs(res.data);
             } catch (error) {
                 console.error("Error fetching latest blogs:", error);
             }
@@ -74,12 +60,11 @@ export const LatestBlogs = () => {
         getBlogs();
         
 
-        // fetchLatestBlogs();
     }, []);
 
     return (
         <section>
-            {myLatestBlogs.length > 0 && (
+            {latestBlogs.length > 0 && (
                 <div className="py-8 px-20">
                     {/* <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
                         <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Blog</h2>
@@ -111,7 +96,7 @@ export const LatestBlogs = () => {
       </motion.div>
     </div>
                     <div className="grid gap-8 lg:grid-cols-2">
-                        {myLatestBlogs.map((blog:any, index:number) => (
+                        {latestBlogs.map((blog:any, index:number) => (
                             <article key={index} className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                                 <div className="flex justify-between items-center mb-5 text-gray-500">
                                     <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
