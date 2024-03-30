@@ -50,7 +50,7 @@ export const LatestBlogs = () => {
     useEffect(() => {
         const getBlogs = async () => {
             try {
-                const res = await axios.get('https://me-server-git-main-ewumeshs-projects.vercel.app/api/latest-blogs');
+                const res = await axios.get('http://localhost:3001/api/blog');
                 setLatestBlogs(res.data);
             } catch (error) {
                 console.error("Error fetching latest blogs:", error);
