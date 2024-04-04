@@ -46,7 +46,7 @@ Solutions tailored to meet diverse needs and exceed expectations.
 
                 <div className="relative">
                     <div className="relative z-10 grid gap-3 grid-cols-6">
-                        <div className="col-span-full lg:col-span-2 overflow-hidden flex relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                        <div className="col-span-full lg:col-span-2 overflow-hidden flex relative p-8 rounded-xl border border-gray-200 dark:border-gray-900 dark:bg-gray-900">
                             <div className="size-fit m-auto relative">
                                 <div className="relative h-24 w-56 flex items-center">
                                     <svg className="absolute inset-0 size-full text-gray-400 dark:text-gray-600" viewBox="0 0 254 104" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@ Solutions tailored to meet diverse needs and exceed expectations.
                                 <h2 className="mt-6 text-center font-semibold text-gray-950 dark:text-white text-3xl">Customizable</h2>
                             </div>
                         </div>
-                        <div className="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                        <div className="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl  border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
                             <div>
                                 <div className="relative aspect-square rounded-full size-32 flex border mx-auto dark:bg-white/5 dark:border-white/10 before:absolute before:-inset-2 before:border dark:before:border-white/5 dark:before:bg-white/5 before:rounded-full">
                                     <svg className="w-24 m-auto h-fit" viewBox="0 0 212 143" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +83,7 @@ Solutions tailored to meet diverse needs and exceed expectations.
                                 </div>
                             </div>
                         </div>
-                        <div className="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                        <div className="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl  border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
                             <div>
                                 <div className="pt-6 lg:px-6">
                                     <svg className="w-full" viewBox="0 0 386 123" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,7 +114,7 @@ Solutions tailored to meet diverse needs and exceed expectations.
                                 </div>
                             </div>
                         </div>
-                        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl  border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
                             <div className="grid sm:grid-cols-2">
                                 <div className="flex flex-col justify-between relative z-10 space-y-12 lg:space-y-6">
                                     <div className="relative aspect-square rounded-full size-12 flex border dark:bg-white/5 dark:border-white/10 before:absolute before:-inset-2 before:border dark:before:border-white/5 dark:before:bg-white/5 before:rounded-full">
@@ -146,7 +146,7 @@ Solutions tailored to meet diverse needs and exceed expectations.
                                 </div>
                             </div>
                         </div>
-                        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
                             <div className="h-full grid sm:grid-cols-2">
                                 <div className="flex flex-col justify-between relative z-10 space-y-12 lg:space-y-6">
                                     <div className="relative aspect-square rounded-full size-12 flex border dark:bg-white/5 dark:border-white/10 before:absolute before:-inset-2 before:border dark:before:border-white/5 dark:before:bg-white/5 before:rounded-full">
