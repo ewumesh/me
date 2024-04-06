@@ -4,6 +4,7 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import axios from "axios";
 import { parseISO, format } from 'date-fns';
+import { API_URL } from "@/constants";
 
 export default function AllActiveBlogs() {
     const [allBlogs, setAllBlogs] = useState<any[]>([]);
@@ -13,7 +14,7 @@ export default function AllActiveBlogs() {
 
     const getAllActiveBlogs = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/blog');
+            const response = await fetch(`${API_URL.url}/api/blog`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -46,7 +47,7 @@ export default function AllActiveBlogs() {
         setIsDeleting(true);
         let blogId = blog._id;
         try {
-            const response = await axios.delete(`http://localhost:3001/api/blog/${blogId}`, {
+            const response = await axios.delete(`${API_URL.url}/api/blog/${blogId}`, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

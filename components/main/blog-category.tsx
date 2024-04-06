@@ -3,6 +3,7 @@ import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from 
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import axios from "axios";
+import { API_URL } from "@/constants";
 
 export default function BlogCategory() {
     const [name, setName] = useState('');
@@ -34,7 +35,7 @@ export default function BlogCategory() {
         setIsDeleting(true);
         let blogCategoryId = category._id;
         try {
-            const response = await axios.delete(`http://localhost:3001/api/blog-category/${blogCategoryId}`, {
+            const response = await axios.delete(`${API_URL.url}/api/blog-category/${blogCategoryId}`, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -61,7 +62,7 @@ export default function BlogCategory() {
 
     const getBlogCategories = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/blog-category');
+            const response = await fetch(`${API_URL.url}/api/blog-category`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -98,7 +99,7 @@ export default function BlogCategory() {
         try {
             let response;
             if (isEditing) {
-                response = await fetch(`http://localhost:3001/api/blog-category/${editingCategory._id}`, {
+                response = await fetch(`${API_URL.url}/api/blog-category/${editingCategory._id}`, {
                     method: "PUT",
                     // headers: {
                     //     "Content-type": "application/json"
@@ -106,7 +107,7 @@ export default function BlogCategory() {
                     body: formData,
                 });
             } else {
-                response = await fetch("http://localhost:3001/api/blog-category", {
+                response = await fetch(`${API_URL.url}/api/blog-category`, {
                     method: "POST",
                     body: formData,
                 });

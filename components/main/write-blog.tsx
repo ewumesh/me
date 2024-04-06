@@ -2,6 +2,7 @@ import { Suspense, useEffect, useState } from "react";
 import dynamic from 'next/dynamic';
 import { InputTags } from "react-bootstrap-tagsinput";
 import { Button } from "@nextui-org/react";
+import { API_URL } from "@/constants";
 
 const EditorComp = dynamic(() => import('../sub/editor'), { ssr: false });
 
@@ -21,7 +22,7 @@ export default function WriteBlog() {
 
   const getBlogCategories = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/blog-category');
+      const response = await fetch(`${API_URL.url}/api/blog-category`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -71,7 +72,7 @@ export default function WriteBlog() {
     formData.append("tags", JSON.stringify(tags));
 
     try {
-      const response = await fetch("https://me-server-git-main-ewumeshs-projects.vercel.app/api/blog", {
+      const response = await fetch(`${API_URL.url}/api/blog`, {
         method: "POST",
         body: formData,
       });

@@ -7,6 +7,8 @@ import {
   RxLinkedinLogo,
 } from "react-icons/rx";
 
+export const API_URL = {url:'https://me-server-git-main-ewumeshs-projects.vercel.app'} //http://localhost:30001 // https://me-server-git-main-ewumeshs-projects.vercel.app
+
 export const SKILL_DATA = [
   {
     skill_name: "HTML",

@@ -11,6 +11,7 @@ import {
   slideInFromRight,
   slideInFromTop,
 } from "@/lib/motion";
+import { API_URL } from '@/constants';
 
 function getTimeDifference(dateString: string) {
     let a = formatDistance(subDays(dateString, 3), new Date(), { addSuffix: true })
@@ -50,7 +51,7 @@ export const LatestBlogs = () => {
     useEffect(() => {
         const getBlogs = async () => {
             try {
-                const response = await fetch('http://localhost:3001/api/blog');
+                const response = await fetch(`${API_URL.url}/api/blog`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
