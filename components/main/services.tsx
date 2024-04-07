@@ -37,7 +37,7 @@ export const Services = () => {
 
       <motion.div
         variants={slideInFromRight(0.5)}
-        className="cursive text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
+        className=" text-[20px] text-gray-500 mb-10 mt-[5px] text-center"
       >
 Solutions tailored to meet diverse needs and exceed expectations.
       </motion.div>
@@ -46,7 +46,7 @@ Solutions tailored to meet diverse needs and exceed expectations.
 
                 <div className="relative">
                     <div className="relative z-10 grid gap-3 grid-cols-6">
-                        <div className="col-span-full lg:col-span-2 overflow-hidden flex relative p-8 rounded-xl border border-gray-200 dark:border-gray-900 dark:bg-gray-900">
+                        <div className="col-span-full lg:col-span-2 overflow-hidden flex relative p-8 rounded-xl border border-gray-900 dark:border-gray-900 dark:bg-gray-900">
                             <div className="size-fit m-auto relative">
                                 <div className="relative h-24 w-56 flex items-center">
                                     <svg className="absolute inset-0 size-full text-gray-400 dark:text-gray-600" viewBox="0 0 254 104" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,10 +54,10 @@ Solutions tailored to meet diverse needs and exceed expectations.
                                     </svg>
                                     <span className="w-fit block mx-auto text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-pink-600 dark:from-blue-400 dark:to-pink-400">100%</span>
                                 </div>
-                                <h2 className="mt-6 text-center font-semibold text-gray-950 dark:text-white text-3xl">Customizable</h2>
+                                <h2 className="mt-6 text-center font-semibold text-gray-950 text-white text-3xl">Customizable</h2>
                             </div>
                         </div>
-                        <div className="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl  border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                        <div className="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl  border border-gray-900 dark:border-gray-800 dark:bg-gray-900">
                             <div>
                                 <div className="relative aspect-square rounded-full size-32 flex border mx-auto dark:bg-white/5 dark:border-white/10 before:absolute before:-inset-2 before:border dark:before:border-white/5 dark:before:bg-white/5 before:rounded-full">
                                     <svg className="w-24 m-auto h-fit" viewBox="0 0 212 143" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,12 +78,12 @@ Solutions tailored to meet diverse needs and exceed expectations.
                                     </svg>
                                 </div>
                                 <div className="mt-6 text-center relative z-10 space-y-2">
-                                    <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Secure by default</h2>
-                                    <p className="dark:text-gray-300 text-gray-700">It encrypts data, validates inputs, and implements strong authentication. It follows secure development practices, regularly updates for vulnerabilities, and monitors for suspicious activity.</p>
+                                    <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 text-white">Secure by default</h2>
+                                    <p className="dark:text-gray-300 text-gray-500">It encrypts data, validates inputs, and implements strong authentication. It follows secure development practices, regularly updates for vulnerabilities, and monitors for suspicious activity.</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl  border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                        <div className="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-8 rounded-xl  border border-gray-900 dark:border-gray-800 dark:bg-gray-900">
                             <div>
                                 <div className="pt-6 lg:px-6">
                                     <svg className="w-full" viewBox="0 0 386 123" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,12 +109,12 @@ Solutions tailored to meet diverse needs and exceed expectations.
                                     </svg>
                                 </div>
                                 <div className="mt-14 text-center relative z-10 space-y-2">
-                                    <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Faster than light</h2>
-                                    <p className="dark:text-gray-300 text-gray-700">Information traveling beyond the speed of light, which is theoretically impossible according to Einsteis theory of relativity.</p>
+                                    <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 text-white">Faster than light</h2>
+                                    <p className="dark:text-gray-300 text-gray-500">Information traveling beyond the speed of light, which is theoretically impossible according to Einsteis theory of relativity.</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl  border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl  border border-gray-900 dark:border-gray-900 dark:bg-gray-900">
                             <div className="grid sm:grid-cols-2">
                                 <div className="flex flex-col justify-between relative z-10 space-y-12 lg:space-y-6">
                                     <div className="relative aspect-square rounded-full size-12 flex border dark:bg-white/5 dark:border-white/10 before:absolute before:-inset-2 before:border dark:before:border-white/5 dark:before:bg-white/5 before:rounded-full">
@@ -123,8 +123,8 @@ Solutions tailored to meet diverse needs and exceed expectations.
                                         </svg>
                                     </div>
                                     <div className="space-y-2">
-                                        <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Trending</h2>
-                                        <p className="dark:text-gray-300 text-gray-700">Increased downloads, usage, and social media mentions over a specific period of time.</p>
+                                        <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 text-white">Trending</h2>
+                                        <p className="dark:text-gray-300 text-gray-500">Increased downloads, usage, and social media mentions over a specific period of time.</p>
                                     </div>
                                 </div>
                                 <div className="overflow-hidden relative mt-6 sm:mt-auto h-fit -mb-[34px] -mr-[34px] sm:ml-6 py-6 p-6 border rounded-tl-lg dark:bg-white/5 dark:border-white/10">
@@ -146,7 +146,7 @@ Solutions tailored to meet diverse needs and exceed expectations.
                                 </div>
                             </div>
                         </div>
-                        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl border border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+                        <div className="col-span-full lg:col-span-3 overflow-hidden relative p-8 rounded-xl border border-gray-900 dark:border-gray-900 dark:bg-gray-900">
                             <div className="h-full grid sm:grid-cols-2">
                                 <div className="flex flex-col justify-between relative z-10 space-y-12 lg:space-y-6">
                                     <div className="relative aspect-square rounded-full size-12 flex border dark:bg-white/5 dark:border-white/10 before:absolute before:-inset-2 before:border dark:before:border-white/5 dark:before:bg-white/5 before:rounded-full">
@@ -158,8 +158,8 @@ Solutions tailored to meet diverse needs and exceed expectations.
                                         </svg>
                                     </div>
                                     <div className="space-y-2">
-                                        <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 dark:text-white">Keep safe your data</h2>
-                                        <p className="dark:text-gray-300 text-gray-700">Ensure data safety through encryption, backups, and robust access controls.</p>
+                                        <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-purple-950 text-white">Keep safe your data</h2>
+                                        <p className="dark:text-gray-300 text-gray-500">Ensure data safety through encryption, backups, and robust access controls.</p>
                                     </div>
                                 </div>
                                 <div className="mt-6 relative sm:-mr-[--card-padding] sm:-my-8 before:absolute before:w-px before:inset-0 before:mx-auto before:bg-gray-200 dark:before:bg-gray-800">

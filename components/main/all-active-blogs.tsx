@@ -73,7 +73,73 @@ export default function AllActiveBlogs() {
 
     return (
         <section>
-            <Table aria-label="Example empty table">
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" className="px-6 py-3">
+                                S.N.
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Title
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Category
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Status
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Published Date
+                            </th>
+
+                            <th scope="col" className="px-6 py-3">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {allBlogs.map((blog: any, index: number) => (
+                            <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {index + 1}
+                                </th>
+                                <td className="px-6 py-4">
+                                    {blog?.title}
+                                </td>
+                                <td className="px-6 py-4">
+                                    {blog?.category || '-'}
+                                </td>
+                                <td className="px-6 py-4">
+                                    {blog?.status|| '-'}
+                                </td>
+                                <td>
+                                    {formatDate(blog?.updatedAt) || '-'}
+                                </td>
+                                <td className="px-6 py-4">
+                                    <button type="button" className="mx-1 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
+                                        <svg className="w-[14px] h-[14px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z" />
+                                        </svg>
+                                        <span className="sr-only">Icon description</span>
+                                    </button>
+
+                                    <button type="button" className="mx-1 text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
+                                        <svg className="w-[14px] h-[14px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
+                                        </svg>
+
+                                        <span className="sr-only">Icon description</span>
+                                    </button>
+                                </td>
+
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+
+            {/* <Table aria-label="Example empty table">
                 <TableHeader>
                     <TableColumn>S.N.</TableColumn>
                     <TableColumn>TITLE</TableColumn>
@@ -115,11 +181,7 @@ export default function AllActiveBlogs() {
                                     <Button color="danger" variant="light" onPress={onClose}>
                                         Close
                                     </Button>
-                                    {/* <Button color="secondary" onPress={handleDeleteConfirm}>
-                  Yes
-                </Button> */}
-
-                                    <Button isLoading={isDeleting} onClick={handleDeleteConfirm}
+                                                                        <Button isLoading={isDeleting} onClick={handleDeleteConfirm}
                                         color="secondary"
                                         className="mx-1"
                                         spinner={
@@ -151,7 +213,7 @@ export default function AllActiveBlogs() {
                             </>
                         )}
                     </ModalContent>
-                </Modal>
+                </Modal> */}
         </section>
     )
 }

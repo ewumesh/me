@@ -39,7 +39,7 @@ export const Projects = () => {
 
       <motion.div
         variants={slideInFromRight(0.5)}
-        className="cursive text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
+        className=" text-[20px] text-gray-500 mb-10 mt-[5px] text-center"
       >
         Empowering communities through sustainable technology solutions for a brighter tomorrow.
       </motion.div>
