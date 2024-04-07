@@ -73,7 +73,7 @@ export default function ViewBlog() {
                         <div className="flex gap-2 flex-wrap py-4">
                             <span className='text-white'>Tags:</span>
                         {blogDetails?.tags?.map((t:any, index:number) => (
-    <span className="bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600">{t}</span>
+    <span key={index} className="bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600">{t}</span>
                         ))}
 </div>
 
