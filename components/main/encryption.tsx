@@ -3,7 +3,7 @@
 import { slideInFromTop } from "@/lib/motion";
 import { motion } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-
+import Image from 'next/image';
 import {
   slideInFromLeft,
   slideInFromRight
@@ -53,14 +53,14 @@ export const Encryption = () => {
 
       <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto">
         <div className="flex flex-col items-center group cursor-pointer w-auto h-auto">
-          <img
+          <Image
             src="/lock-top.png"
             alt="Lock top"
             width={50}
             height={50}
             className="translate-y-5 transition-all duration-200 group-hover:translate-y-11"
           />
-          <img
+          <Image
             src="/lock-main.png"
             alt="Lock main"
             width={70}

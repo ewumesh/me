@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { LINKS, NAV_LINKS, SOCIALS } from "@/constants";
-
+import Image from 'next/image';
 export const Navbar = () => {
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
@@ -10,7 +10,7 @@ export const Navbar = () => {
           href="/"
           className="h-auto w-auto flex flex-row items-center"
         >
-          <img
+          <Image
             src="/logo3.png"
             alt="Logo"
             width={80}

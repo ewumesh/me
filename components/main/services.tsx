@@ -3,7 +3,7 @@
 import { slideInFromTop } from "@/lib/motion";
 import { motion } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-
+import Image from 'next/image';
 import {
   slideInFromLeft,
   slideInFromRight

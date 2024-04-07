@@ -3,10 +3,11 @@ const {nextui} = require("@nextui-org/react");
 
 const config: Config = {
   content: [
-    "./node_modules/flowbite/**/*.js",
+    
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./node_modules/flowbite/**/*.js",
     // './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {

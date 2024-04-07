@@ -6,7 +6,7 @@ import Link from "next/link";
 import { slideInFromTop } from "@/lib/motion";
 import { motion } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-
+import Image from 'next/image';
 import {
   slideInFromLeft,
   slideInFromRight
@@ -46,7 +46,7 @@ export const Partners = () => {
         {PARTNERS.map((p) => (
           <Link href={p.link} target="_blank" key={p.name}>
             <div className="px-2">
-              <img  alt={p.name} className="rounded-lg" style={{ height: '100px' }} src={p.image} />
+              <Image  alt={p.name} className="rounded-lg" style={{ height: '100px' }} src={p.image} />
             </div>
           </Link>
       ))}

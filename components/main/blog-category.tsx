@@ -177,7 +177,7 @@ export default function BlogCategory() {
                 </div>
             </div>
 
-            <div className="bg-gray-900  rounded-md p-4">
+            <div className="bg-gray-900  rounded-md p-4 mt-5">
                 <div className="text-white">
                     <h3 className="text-1xl font-bold ">All Blog Categories</h3>
                 </div>

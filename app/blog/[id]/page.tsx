@@ -4,13 +4,16 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { parseISO, format } from 'date-fns';
 import { usePathname } from 'next/navigation';
-import MarkdownContent from '../markdown';
 
 export default function ViewBlog() {
     const [blogDetails, setBlogDetails] = useState<any>({});
     const id = extractIdFromUrl(usePathname());
 
-    
+    const formatDate = (dateString: string) => {
+        const date = parseISO(dateString);
+        return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>;
+    }
+
     function extractIdFromUrl(url: string): string | null {
         const regex = /^\/blog\/([a-fA-F0-9]+)$/; // Regular expression to match "/blog/" followed by a hexadecimal ID
         const match = url.match(regex);
@@ -21,86 +24,93 @@ export default function ViewBlog() {
         }
     }
 
-    function formatDate(dateString:string) {
-        const date = parseISO(dateString);
-        return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>;
-        }
 
+
+    const fetchBlogById = async () => {
+
+        if (!id) return;
+        try {
+            const res = await axios.get(`https://me-server-git-main-ewumeshs-projects.vercel.app/api/blog/${id}`);
+            setBlogDetails(res.data);
+        } catch (error) {
+            console.error("Error fetching latest blogs:", error);
+        }
+    };
     useEffect(() => {
-        const fetchBlogById = async () => {
-            
-            if (!id) return; 
-            try {
-                const res = await axios.get(`https://me-server-git-main-ewumeshs-projects.vercel.app/api/blog/${id}`);
-                setBlogDetails(res.data);
-            } catch (error) {
-                console.error("Error fetching latest blogs:", error);
-            }
-        };
+
 
         fetchBlogById();
-    },[id]);
+    }, [id]);
 
     return (
         <section>
-            <main className="pt-8 pb-5 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
+            <main className="pt-8 pb-5 lg:pt-16 lg:pb-24  dark:bg-gray-900 antialiased backdrop-blur-sm">
                 <div className="flex justify-between px-20 ">
                     <article className="mx-auto w-full  format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
                         <header className="mb-4 lg:mb-6 not-format">
                             <address className="flex items-center mb-6 not-italic">
                                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                    <img className="mr-4 w-16 h-16 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos" />
-                                        <div>
-                                            <a href="#" rel="author" className="text-xl font-bold text-gray-900 dark:text-white">Umesh Thapa</a>
-                                            <p className="text-base text-gray-500 dark:text-gray-400">Software Developer</p>
-                                            <p className="text-base text-gray-500 dark:text-gray-400">{(blogDetails?.createdAt)}</p>
-                                        </div>
+                                    <img className="w-7 h-7 rounded-full" src={'author.jpg'} alt="Umesh Thapa" />
+                                    <div>
+                                        <a href="#" rel="author" className="text-xl font-bold text-gray-500 dark:text-white">Umesh Thapa</a>
+                                        <p className="text-base text-gray-500 dark:text-gray-500">Software Developer</p>
+                                        {blogDetails?.createdAt && (
+                                            <p className="text-base text-gray-500 dark:text-gray-500">{formatDate(blogDetails?.createdAt)}</p>
+
+                                        )}
+                                    </div>
                                 </div>
                             </address>
-                            <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">{blogDetails?.title}</h1>
+                            <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl text-white">{blogDetails?.title}</h1>
                         </header>
-                        
-                        <figure><img src={blogDetails?.thumbnail} alt="" />
-                            <figcaption className="text-base text-gray-500 dark:text-gray-400">Digital art by Anonymous</figcaption>
-                        </figure>
-                        <MarkdownContent content={blogDetails?.content} />
-                        {/* <div className="dark:text-white" dangerouslySetInnerHTML={{__html:blogDetails?.content}}></div> */}
-                        
 
-                            <section className="not-format mt-10">
-                                <div className="flex justify-between items-center mb-6">
-                                    <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion</h2>
+                        <figure><img src={blogDetails?.thumbnail} alt="" />
+                            {/* <figcaption className="text-base text-gray-500 dark:text-gray-400">Digital art by Anonymous</figcaption> */}
+                        </figure>
+                        {/* <MarkdownContent content={blogDetails?.content} /> */}
+                        <div className="text-white" dangerouslySetInnerHTML={{ __html: blogDetails?.content }}></div>
+                        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
+                        <div className="flex gap-2 flex-wrap py-4">
+                            <span className='text-white'>Tags:</span>
+                        {blogDetails?.tags?.map((t:any, index:number) => (
+    <span className="bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600">{t}</span>
+                        ))}
+</div>
+
+                        <section className="not-format mt-10">
+                            <div className="flex justify-between items-center mb-6">
+                                <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion</h2>
+                            </div>
+                            <form className="mb-6">
+                                <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                                    <label className="sr-only">Your comment</label>
+                                    <textarea id="comment" rows={6}
+                                        className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
+                                        placeholder="Write a comment..." required></textarea>
                                 </div>
-                                <form className="mb-6">
-                                    <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-                                        <label className="sr-only">Your comment</label>
-                                        <textarea id="comment" rows={6}
-                                            className="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
-                                            placeholder="Write a comment..." required></textarea>
-                                    </div>
-                                    <button type="submit"
-                                        className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-                                        Post comment
-                                    </button>
-                                </form>
-                            </section>
+                                <button type="submit"
+                                    className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                                    Post comment
+                                </button>
+                            </form>
+                        </section>
                     </article>
                 </div>
             </main>
 
-            <aside aria-label="Related articles" className="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800">
+            <aside aria-label="Related articles" className="py-8 lg:py-24  backdrop-blur-sm">
                 <div className="px-4 mx-auto max-w-screen-xl">
-                    <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-white">Related articles</h2>
+                    <h2 className="mb-8 text-2xl font-bold text-gray-900 text-white">Related articles</h2>
                     <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
                         <article className="max-w-xs">
                             <a href="#">
                                 <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" className="mb-5 rounded-lg" alt="Image 1" />
                             </a>
-                            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 text-white">
                                 <a href="#">Our first office</a>
                             </h2>
                             <p className="mb-4 text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                            <a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
+                            <a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-white hover:no-underline">
                                 Read in 2 minutes
                             </a>
                         </article>
@@ -108,11 +118,11 @@ export default function ViewBlog() {
                             <a href="#">
                                 <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png" className="mb-5 rounded-lg" alt="Image 2" />
                             </a>
-                            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 text-white">
                                 <a href="#">Enterprise design tips</a>
                             </h2>
                             <p className="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                            <a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
+                            <a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-white hover:no-underline">
                                 Read in 12 minutes
                             </a>
                         </article>
@@ -120,11 +130,11 @@ export default function ViewBlog() {
                             <a href="#">
                                 <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png" className="mb-5 rounded-lg" alt="Image 3" />
                             </a>
-                            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                            <h2 className="mb-2 text-xl font-bold leading-tight text-white">
                                 <a href="#">We partnered with Google</a>
                             </h2>
                             <p className="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                            <a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
+                            <a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-white hover:no-underline">
                                 Read in 8 minutes
                             </a>
                         </article>
@@ -132,11 +142,11 @@ export default function ViewBlog() {
                             <a href="#">
                                 <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-4.png" className="mb-5 rounded-lg" alt="Image 4" />
                             </a>
-                            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 text-white">
                                 <a href="#">Our first project with React</a>
                             </h2>
                             <p className="mb-4  text-gray-500 dark:text-gray-400">Over the past year, Volosoft has undergone many changes! After months of preparation.</p>
-                            <a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
+                            <a href="#" className="inline-flex items-center font-medium underline underline-offset-4 text-white hover:no-underline">
                                 Read in 4 minutes
                             </a>
                         </article>
@@ -144,10 +154,10 @@ export default function ViewBlog() {
                 </div>
             </aside>
 
-            <section className="bg-white dark:bg-gray-900">
+            <section className="backdrop-blur-sm">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div className="mx-auto max-w-screen-md sm:text-center">
-                        <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">Sign up for our newsletter</h2>
+                        <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl text-white">Sign up for our newsletter</h2>
                         <p className="mx-auto mb-8 max-w-2xl  text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.</p>
                         <form action="#">
                             <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">

@@ -2,6 +2,9 @@ import { Suspense, useEffect, useState } from "react";
 import dynamic from 'next/dynamic';
 import { InputTags } from "react-bootstrap-tagsinput";
 import { API_URL } from "@/constants";
+import 'react-quill/dist/quill.snow.css';
+
+const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
 
 const EditorComp = dynamic(() => import('../sub/editor'), { ssr: false });
 
@@ -18,6 +21,36 @@ export default function WriteBlog() {
   const [tags, setTags] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isDrafting, setIsDrafting] = useState(false);
+
+  const quillModules = {
+    toolbar: [
+     [{ header: [1, 2, 3, false] }],
+     ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+     [{ list: 'ordered' }, { list: 'bullet' }],
+     ['link', 'image'],
+     [{ align: [] }],
+     [{ color: [] }],
+     ['code-block'],
+     ['clean'],
+    ],
+   };
+  
+  
+   const quillFormats = [
+    'header',
+    'bold',
+    'italic',
+    'underline',
+    'strike',
+    'blockquote',
+    'list',
+    'bullet',
+    'link',
+    'image',
+    'align',
+    'color',
+    'code-block',
+   ];
 
   const getBlogCategories = async () => {
     try {
@@ -118,9 +151,17 @@ export default function WriteBlog() {
 
             <div className="py-2 px-4 bg-gray-800 text-white rounded-md focus:outline-none mb-4 resize-none w-full">
               <label className="block text-sm font-medium leading-6 text-white">Content</label>
-              <Suspense fallback={null}>
+              {/* <Suspense fallback={null}>
                 <EditorComp markdown={markdown} onChange={handleContentChange} />
-              </Suspense>
+              </Suspense> */}
+
+<QuillEditor
+      value={content}
+      onChange={handleContentChange}
+      modules={quillModules}
+      formats={quillFormats}
+      className="w-full h-[70%] mt-10"
+     />
             </div>
 
             <div>
@@ -129,6 +170,7 @@ export default function WriteBlog() {
                 <InputTags className="py-2 bg-gray-800 text-white rounded-md  w-full mb-4 mt-4" values={tags} onTags={(value) => setTags(value.values)} />
               </div>
             </div>
+
 
             <button onClick={handleDraftSave} 
             color="default"

@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { parseISO, format } from 'date-fns';
+import Image from 'next/image';
 
 function formatDate(dateString:string) {
 const date = parseISO(dateString);
@@ -57,7 +58,7 @@ export default function Blogs() {
 			{allBlogs.length > 0 && (
 	<div className="px-20 mx-auto space-y-6 sm:space-y-12 ">
 		<a rel="noopener noreferrer" href={'/blog/' + convertToSlug(allBlogs[0].title)} className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-900">
-			<img src="https://source.unsplash.com/random/" alt="" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500" />
+			<Image src="https://source.unsplash.com/random/" alt="" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500" />
 			<div className="p-6 space-y-2 lg:col-span-5">
 				<h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">{allBlogs[0].title}</h3>
 				<span className="text-xs dark:text-gray-400">{formatDate(allBlogs[0].pubDate)}</span>
@@ -67,7 +68,7 @@ export default function Blogs() {
 		<div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{allBlogs.slice(1,9).map((blog, index) => (
 			<a key={index} rel="noopener noreferrer" href={'/blog/' + convertToSlug(blog.title)} className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
-				<img alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src={'https://source.unsplash.com/random/480x360?'+index} />
+				<Image alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src={'https://source.unsplash.com/random/480x360?'+index} />
 				<div className="p-6 space-y-2">
 					<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">{blog.title}</h3>
 					<span className="text-xs dark:text-gray-400">{formatDate(blog.pubDate)}</span>
@@ -76,7 +77,7 @@ export default function Blogs() {
 			</a>
 		))}
 			{/* <a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
-				<img alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://source.unsplash.com/random/480x360?2" />
+				<Image alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://source.unsplash.com/random/480x360?2" />
 				<div className="p-6 space-y-2">
 					<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
 					<span className="text-xs dark:text-gray-400">January 22, 2021</span>
@@ -84,7 +85,7 @@ export default function Blogs() {
 				</div>
 			</a>
 			<a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
-				<img alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://source.unsplash.com/random/480x360?3" />
+				<Image alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://source.unsplash.com/random/480x360?3" />
 				<div className="p-6 space-y-2">
 					<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
 					<span className="text-xs dark:text-gray-400">January 23, 2021</span>
@@ -92,7 +93,7 @@ export default function Blogs() {
 				</div>
 			</a>
 			<a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 hidden sm:block">
-				<img alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://source.unsplash.com/random/480x360?4" />
+				<Image alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://source.unsplash.com/random/480x360?4" />
 				<div className="p-6 space-y-2">
 					<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
 					<span className="text-xs dark:text-gray-400">January 24, 2021</span>
@@ -100,7 +101,7 @@ export default function Blogs() {
 				</div>
 			</a>
 			<a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 hidden sm:block">
-				<img alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://source.unsplash.com/random/480x360?5" />
+				<Image alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://source.unsplash.com/random/480x360?5" />
 				<div className="p-6 space-y-2">
 					<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
 					<span className="text-xs dark:text-gray-400">January 25, 2021</span>
@@ -108,7 +109,7 @@ export default function Blogs() {
 				</div>
 			</a>
 			<a rel="noopener noreferrer" href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 hidden sm:block">
-				<img alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://source.unsplash.com/random/480x360?6" />
+				<Image alt="" role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src="https://source.unsplash.com/random/480x360?6" />
 				<div className="p-6 space-y-2">
 					<h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
 					<span className="text-xs dark:text-gray-400">January 26, 2021</span>

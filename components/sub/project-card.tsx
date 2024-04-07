@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Image from 'next/image';
 type ProjectCardProps = {
   src: string;
   title: string;
@@ -20,7 +20,7 @@ export const ProjectCard = ({
       rel="noreferrer noopener"
       className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61]"
     >
-      <img
+      <Image
         src={src}
         alt={title}
         width={1000}
