@@ -1,3 +1,5 @@
+"use client ";
+
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import type { PropsWithChildren } from "react";
@@ -30,7 +32,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <Analytics/>
         <StarsCanvas />
         <Navbar />
+        {/* <BrowserRouter> */}
         {children}
+        {/* </BrowserRouter> */}
         <Footer />
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
       </body>
