@@ -55,7 +55,7 @@ export default function ViewBlog() {
 
     const getBlogsLatest = async () => {
         try {
-            const response = await fetch(`${API_URL.url}/api/latest-blogs`);
+            const response = await fetch(`${API_URL.url}/api/blog`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
