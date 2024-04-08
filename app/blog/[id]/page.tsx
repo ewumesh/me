@@ -6,6 +6,12 @@ import { parseISO, format } from 'date-fns';
 import { usePathname } from 'next/navigation';
 import { API_URL } from '@/constants';
 
+import { Metadata } from 'next';
+import { Props } from '@react-three/fiber';
+
+export const metadata: Metadata= {};
+
+
 export default function ViewBlog() {
     const [blogDetails, setBlogDetails] = useState<any>({});
     const [latestBlogs, setLatestBlogs] = useState<any[]>([]);
@@ -39,6 +45,9 @@ export default function ViewBlog() {
         if (!id) return;
         try {
             const res = await axios.get(`${API_URL.url}/api/blog/${id}`);
+            if (res?.data?.title) {
+                metadata.title = res?.data?.title;
+            }
             setBlogDetails(res.data);
         } catch (error) {
             console.error("Error fetching latest blogs:", error);
@@ -165,7 +174,7 @@ export default function ViewBlog() {
             </main>
 
             <aside aria-label="Related articles" className="py-8 lg:py-24  backdrop-blur-sm">
-                <div className="px-4 mx-auto max-w-screen-xl">
+                <div className="px-20 mx-auto">
                     <h2 className="mb-8 text-2xl font-bold text-gray-900 text-white">Related articles</h2>
                     <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
                         <article className="max-w-xs">
