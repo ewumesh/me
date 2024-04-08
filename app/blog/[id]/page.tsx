@@ -126,7 +126,7 @@ export default function ViewBlog() {
 
                         <section className="not-format mt-10">
                             <div className="flex justify-between items-center mb-6">
-                                <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion</h2>
+                                <h2 className="text-lg lg:text-2xl font-bold text-gray-900 text-white">Discussion</h2>
                             </div>
                             <form className="mb-6">
                                 <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
