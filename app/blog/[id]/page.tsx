@@ -142,7 +142,7 @@ export default function ViewBlog() {
                                 </div>
                                 <div className="flex flex-col divide-y dark:divide-gray-800">
                                     {latestBlogs.slice(0, 5)?.map((lBlog: any, index: number) => (
-                                        <div className="flex px-1 py-4">
+                                        <div key={index} className="flex px-1 py-4">
                                             <img alt="" className="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src={lBlog?.thumbnail} />
                                             <div className="flex flex-col flex-grow">
                                                 <a rel="noopener noreferrer" href={'/blog/' + lBlog?._id} className="hover:underline text-white text-sm" title={lBlog?.title}>{lBlog?.title.slice(0, 60)}</a>
