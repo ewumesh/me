@@ -7,9 +7,8 @@ import { usePathname } from 'next/navigation';
 import { API_URL } from '@/constants';
 
 import { Metadata } from 'next';
-import { Props } from '@react-three/fiber';
 
-export const metadata: Metadata= {};
+// export const metadata: Metadata= {};
 
 
 export default function ViewBlog() {
@@ -46,7 +45,7 @@ export default function ViewBlog() {
         try {
             const res = await axios.get(`${API_URL.url}/api/blog/${id}`);
             if (res?.data?.title) {
-                metadata.title = res?.data?.title;
+                // metadata.title = res?.data?.title;
             }
             setBlogDetails(res.data);
         } catch (error) {
