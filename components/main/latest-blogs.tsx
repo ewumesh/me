@@ -49,9 +49,9 @@ export const LatestBlogs = () => {
     const [latestBlogs, setLatestBlogs] = useState<any[]>([]);
 
     useEffect(() => {
-        const getBlogs = async () => {
+        const getBlogsLatest = async () => {
             try {
-                const response = await fetch(`${API_URL.url}/api/blog`);
+                const response = await fetch(`${API_URL.url}/api/latest-blogs`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -62,7 +62,7 @@ export const LatestBlogs = () => {
             }
         };
 
-        getBlogs();
+        getBlogsLatest();
         
 
     }, []);

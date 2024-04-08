@@ -4,14 +4,22 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { parseISO, format } from 'date-fns';
 import { usePathname } from 'next/navigation';
+import { API_URL } from '@/constants';
 
 export default function ViewBlog() {
     const [blogDetails, setBlogDetails] = useState<any>({});
+    const [latestBlogs, setLatestBlogs] = useState<any[]>([]);
+    const [blogCategories, setBlogCategories] = useState<any[]>([]);
     const id = extractIdFromUrl(usePathname());
 
     const formatDate = (dateString: string) => {
         const date = parseISO(dateString);
         return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>;
+    }
+
+    const getCategoryName = (id:any) => {
+        const category = blogCategories.find(a =>a._id === id)?.name;
+        return category;
     }
 
     function extractIdFromUrl(url: string): string | null {
@@ -24,28 +32,54 @@ export default function ViewBlog() {
         }
     }
 
-
-
     const fetchBlogById = async () => {
 
         if (!id) return;
         try {
-            const res = await axios.get(`https://me-server-git-main-ewumeshs-projects.vercel.app/api/blog/${id}`);
+            const res = await axios.get(`${API_URL.url}/api/blog/${id}`);
             setBlogDetails(res.data);
         } catch (error) {
             console.error("Error fetching latest blogs:", error);
         }
     };
+
+    const getBlogsLatest = async () => {
+        try {
+            const response = await fetch(`${API_URL.url}/api/latest-blogs`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            const opened = data.filter((a: any) => a._id !== id);
+            setLatestBlogs(opened);
+        } catch (error) {
+            console.error("Error fetching latest blogs:", error);
+        }
+    };
+
+    const getBlogCategories = async () => {
+        try {
+            const response = await fetch(`${API_URL.url}/api/blog-category`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            setBlogCategories(data);
+        } catch (error) {
+            console.error("Error fetching blog categories:", error);
+        }
+    };
+
     useEffect(() => {
-
-
         fetchBlogById();
+        getBlogsLatest();
+        getBlogCategories();
     }, [id]);
 
     return (
         <section>
             <main className="pt-8 pb-5 lg:pt-16 lg:pb-24  dark:bg-gray-900 antialiased backdrop-blur-sm">
-                <div className="flex justify-between px-20 ">
+                <div className="flex justify-between px-20 top-10">
                     <article className="mx-auto w-full  format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
                         <header className="mb-4 lg:mb-6 not-format">
                             <address className="flex items-center mb-6 not-italic">
@@ -61,6 +95,9 @@ export default function ViewBlog() {
                                     </div>
                                 </div>
                             </address>
+                            {blogDetails?.category && blogCategories.length && (
+                                <span className="bg-gray-100 rounded px-3 py-1 text-sm font-semibold text-gray-600">{getCategoryName(blogDetails?.category)}</span>
+                            )}
                             <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl text-white">{blogDetails?.title}</h1>
                         </header>
 
@@ -72,10 +109,10 @@ export default function ViewBlog() {
                         <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
                         <div className="flex gap-2 flex-wrap py-4">
                             <span className='text-white'>Tags:</span>
-                        {blogDetails?.tags?.map((t:any, index:number) => (
-    <span key={index} className="bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600">{t}</span>
-                        ))}
-</div>
+                            {blogDetails?.tags?.map((t: any, index: number) => (
+                                <span key={index} className="bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600">{t}</span>
+                            ))}
+                        </div>
 
                         <section className="not-format mt-10">
                             <div className="flex justify-between items-center mb-6">
@@ -95,6 +132,33 @@ export default function ViewBlog() {
                             </form>
                         </section>
                     </article>
+                    {latestBlogs?.length && (
+                    <aside className="w-full lg:w-2/6 p-4 lg:p-8  backdrop-blur-sm">
+                        <div className="sticky top-20">
+
+                            <div className="hidden py-2 xl:col-span-3 lg:col-span-4 md:hidden lg:block">
+                                <div className=" space-x-5 border-b-2 border-opacity-10 dark:border-violet-600">
+                                    <button type="button" className="pb-5 text-xs font-bold uppercase border-b-2 dark:border-violet-600 text-white">Latest Blogs</button>
+                                </div>
+                                <div className="flex flex-col divide-y dark:divide-gray-800">
+                                    {latestBlogs.slice(0, 5)?.map((lBlog: any, index: number) => (
+                                        <div className="flex px-1 py-4">
+                                            <img alt="" className="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src={lBlog?.thumbnail} />
+                                            <div className="flex flex-col flex-grow">
+                                                <a rel="noopener noreferrer" href={'/blog/' + lBlog?._id} className="hover:underline text-white text-sm" title={lBlog?.title}>{lBlog?.title.slice(0, 60)}</a>
+                                                {lBlog?.createdAt && (
+                                                    <p className="mt-auto text-xs text-white">{formatDate(lBlog?.createdAt)}</p>
+                                                )}
+
+                                            </div>
+                                        </div>
+                                    ))}
+
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    )}
                 </div>
             </main>
 
@@ -181,6 +245,5 @@ export default function ViewBlog() {
                 </div>
             </section>
         </section>
-
     )
 }

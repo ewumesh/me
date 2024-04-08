@@ -172,18 +172,17 @@ export default function EditBlog() {
                     </div>
 
                     <div id="default-styled-tab-content">
-                        <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div className="bg-gray-900  rounded-md p-4">
+                        <div className="hidden rounded-lg" id="styled-profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div className="  rounded-md backdrop-blur-sm border p-4">
                                 <div className="text-white">
                                     <h1 className="text-4xl font-bold ">Edit Blog</h1>
-                                    {/* <p className="mt-4 text-lg">Write your thoughts freely!</p> */}
                                 </div>
                                 <div className="mt-8">
                                     <form autoFocus={false} autoComplete="off">
                                         <label className="block text-sm font-medium leading-6 text-white">Title</label>
                                         <input type="text" name="title" onChange={handleTitleChange} value={title} placeholder="Enter Blog Title" className="py-2 px-4 bg-gray-800 text-white rounded-md focus:outline-none w-full mb-4" required />
 
-                                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                                        <label className="block mb-2 text-sm font-medium text-gray-900 text-white">Category</label>
                                         <select onChange={handleCategoryChange} value={category} id="small" className="py-2 px-4 bg-gray-800 text-white rounded-md focus:outline-none w-full mb-4">
                                             {blogCategories.map((category: any, index: number) => (
                                                 <option key={index} value={category?._id}>{category?.name}</option>
