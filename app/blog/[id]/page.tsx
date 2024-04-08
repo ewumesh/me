@@ -12,6 +12,8 @@ export default function ViewBlog() {
     const [blogCategories, setBlogCategories] = useState<any[]>([]);
     const id = extractIdFromUrl(usePathname());
 
+    const authorImage = 'author.jpg'
+
     const formatDate = (dateString: string) => {
         const date = parseISO(dateString);
         return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>;
@@ -84,7 +86,7 @@ export default function ViewBlog() {
                         <header className="mb-4 lg:mb-6 not-format">
                             <address className="flex items-center mb-6 not-italic">
                                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                    <img className="w-7 h-7 rounded-full" src={'author.jpg'} alt="Umesh Thapa" />
+                                    <img className="w-7 h-7 rounded-full" src={authorImage} alt="Umesh Thapa" />
                                     <div>
                                         <a href="#" rel="author" className="text-xl font-bold text-gray-500 dark:text-white">Umesh Thapa</a>
                                         <p className="text-base text-gray-500 dark:text-gray-500">Software Developer</p>

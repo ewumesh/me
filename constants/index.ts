@@ -379,7 +379,7 @@ export const FOOTER_DATA = [
       {
         name: "Discord",
         icon: RxDiscordLogo,
-        link: "https://discord.com/ewumesh",
+        link: "https://discord.com/channels/1007155161652797462/1007155162139340873",
       },
     ],
   },
@@ -399,7 +399,7 @@ export const FOOTER_DATA = [
       {
         name: "Linkedin",
         icon: RxLinkedinLogo,
-        link: "https://linkedin.com/ewumesh",
+        link: "https://www.linkedin.com/in/ewumesh/",
       },
     ],
   },
