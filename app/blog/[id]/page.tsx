@@ -111,7 +111,7 @@ export default function ViewBlog() {
                             <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl text-white">{blogDetails?.title}</h1>
                         </header>
 
-                        <figure><img src={blogDetails?.thumbnail} alt="" />
+                        <figure className='mb-5'><img style={{height:'400px', objectFit:'cover', width:'100%'}} src={blogDetails?.thumbnail} alt="" />
                             {/* <figcaption className="text-base text-gray-500 dark:text-gray-400">Digital art by Anonymous</figcaption> */}
                         </figure>
                         {/* <MarkdownContent content={blogDetails?.content} /> */}
