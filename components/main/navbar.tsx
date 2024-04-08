@@ -8,9 +8,8 @@ export const Navbar = () => {
   const [userDetails, setUserDetails] = useState<any>(null);
 
   useEffect(() => {
-    let userDetails = JSON.parse(localStorage.getItem('userDetails') || '');
+    let userDetails = JSON.parse(localStorage.getItem('userDetails') || '{}');
     setUserDetails(userDetails);
-    console.log(userDetails, 'UDDD')
   }, []);
 
   return (
