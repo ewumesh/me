@@ -79,11 +79,11 @@ export const Navbar = () => {
 
           {userDetails && (
             <div>
+              <Link href={'/profile'}>
               <div className="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-                <Link href={'/profile'}>
-                <span className="font-medium text-gray-600 dark:text-gray-300">{userDetails?.user?.name?.slice(0, 1) || 'U'}</span>
-                </Link>
+                <span className="font-medium text-gray-600 dark:text-gray-300">{userDetails?.user?.name?.slice(0, 1) || ''}</span> 
               </div>
+              </Link>
             </div>
           )}
         </div>
