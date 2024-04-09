@@ -13,6 +13,7 @@ const markdown = `
 `
 
 export default function WriteBlog() {
+  const [loggedUserId, setLoggedUserId] = useState('');
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [thumbnail, setThumbnail] = useState(null);
@@ -66,6 +67,9 @@ export default function WriteBlog() {
   };
 
   useEffect(() => {
+    let user = JSON.parse(localStorage.getItem('userDetails') || '{}');
+    console.log(user?.user?._id, 'USERRRR')
+    setLoggedUserId(user?.user?._id);
     getBlogCategories();
   }, []);
 
@@ -101,6 +105,7 @@ export default function WriteBlog() {
       formData.append("thumbnail", thumbnail);
     }
     formData.append("content", content);
+    formData.append("user", loggedUserId);
     formData.append("tags", JSON.stringify(tags));
 
     try {
