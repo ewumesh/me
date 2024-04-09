@@ -31,7 +31,7 @@ export default function Blogs() {
 
 	const getBlogs = async () => {
 		try {
-			const response = await fetch(`${API_URL.url}/api/blog`);
+			const response = await fetch(`${API_URL.url}/api/blog`, {});
 			if (!response.ok) {
 				throw new Error(`HTTP error! status: ${response.status}`);
 			}

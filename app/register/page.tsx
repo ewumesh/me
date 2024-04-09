@@ -6,12 +6,22 @@ import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Register() {
     // const navigate = useNavigate();
-
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [image, setImage] = useState(null);
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+
+    const handleImageChange = (event: any) => {
+        const file = event.target.files[0];
+        setImage(file || null);
+      };
+
+    const handleNameChange = (event: any) => {
+        setName(event.target.value);
+    };
 
     const handleEmailChange = (event: any) => {
         setEmail(event.target.value);
@@ -21,23 +31,26 @@ export default function Login() {
         setPassword(event.target.value);
     };
 
-    const handleLogin = async (event: any) => {
+    const handleRegister = async (event: any) => {
         setIsLoading(true);
 
         const formData = new FormData();
+        formData.append("name", name);
+        if(image !== null) {
+            formData.append("image", image);
+        }
         formData.append("email", email);
         formData.append("password", password);
 
         try {
-            const response = await fetch(`${API_URL.url}/api/user/login`, {
+            const response = await fetch(`${API_URL.url}/api/user`, {
                 method: "POST",
                 body: formData,
             });
 
             if (response.ok) {
                 const data = await response.json();
-                localStorage.setItem('userDetails', JSON.stringify(data.data));
-                window.location.href = '/';
+                window.location.href = '/login';
             } else {
                 setIsLoading(false);
                 console.error("Failed to Login:", response.statusText);
@@ -66,26 +79,31 @@ export default function Login() {
 
                             <form autoFocus={false} autoComplete="off">
                                 <div>
-                                    <span className="text-sm text-white">Welcome back</span>
-                                    <h1 className="text-2xl font-bold text-white">Login to your account</h1>
+                                    <span className="text-sm text-white">Hi!</span>
+                                    <h1 className="text-2xl font-bold text-white">Explore and enjoy our latest feature.</h1>
                                 </div>
+                                <div className="my-3">
+                                    <label className="block text-md text-white mb-2" >Name</label>
+                                    <input value={name} onChange={handleNameChange} className="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="text" name="name" placeholder="Full Name" />
+                                </div>
+
                                 <div className="my-3">
                                     <label className="block text-md text-white mb-2" >Email</label>
                                     <input value={email} onChange={handleEmailChange} className="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email" name="password" placeholder="Email" />
                                 </div>
+
+                                <div className="my-3">
+                                    <label className="block text-md text-white mb-2" >Image</label>
+                                    <input onChange={handleImageChange} className="px-4 w-full border-2 rounded-md text-sm outline-none text-white" type="file" name="profile" />
+                                </div>
+
                                 <div className="mt-5">
                                     <label className="block text-md text-white mb-2">Password</label>
                                     <input value={password} onChange={handlePasswordChange} className="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password" name="password" placeholder="Password" />
                                 </div>
 
-                                <div className="flex justify-between">
-                                    <div>
-
-                                    </div>
-                                    <span className="text-sm text-blue-700 hover:underline cursor-pointer">Forgot password?</span>
-                                </div>
                                 <div>
-                                    <button disabled={isLoading} onClick={handleLogin} type="button" className="mt-4 mb-3 w-full bg-purple-500 hover:bg-purple-400 text-white py-2 rounded-md transition duration-100">
+                                    <button disabled={isLoading} onClick={handleRegister} type="button" className="mt-4 mb-3 w-full bg-purple-500 hover:bg-purple-400 text-white py-2 rounded-md transition duration-100">
                                         {isLoading && (
                                             <svg aria-hidden="true" className="inline w-5 h-5 text-gray-200 animate-spin dark:text-gray-600 fill-purple-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
@@ -93,17 +111,17 @@ export default function Login() {
                                         </svg>
                                         )}
                                         
-                                        {isLoading ? 'Please wait...':'Login now'}
+                                        {isLoading ? 'Please wait...':'Register'}
                                         
                                     </button>
                                     <div className="flex  space-x-2 justify-center items-end bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-md transition duration-100">
 
                                         <img className="h-5 cursor-pointer" src="https://i.imgur.com/arC60SB.png" alt="" />
-                                        <button >Or sign-in with google</button>
+                                        <button >Or register with google</button>
                                     </div>
                                 </div>
                             </form>
-                            <p className="mt-8"><span className="text-white"> Dont have an account?</span> <Link href="/register"> <span className="cursor-pointer text-sm text-blue-600"> Join free today</span></Link></p>
+                            <p className="mt-8"><span className="text-white"> Already have an account?</span> <Link href="/login"> <span className="cursor-pointer text-sm text-blue-600"> Login</span></Link></p>
                         </div>
                     </div>
                 </div>
