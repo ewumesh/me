@@ -75,14 +75,14 @@ export default function Profile() {
         
           <div className="mt-20 text-center border-b pb-12">
             <h1 className="text-4xl font-medium text-gray-700">{userDetails?.name} <span className="font-light text-gray-500">24</span></h1>
-            <p className="font-light text-gray-600 mt-3">Kathmandu, Nepal</p>
+            <p className="font-light text-gray-600 mt-3">-</p>
         
-            <p className="mt-8 text-gray-500">Software Developer - Ewumesh</p>
+            <p className="mt-8 text-gray-500">-</p>
             <p className="mt-2 text-gray-500">-</p>
           </div>
         
           <div className="mt-12 flex flex-col justify-center">
-            <p className="text-gray-600 text-center font-light lg:px-16">Experienced Full Stack Developer skilled in JavaScript, Node, and Java, with expertise in React, Angular, and Vue.js. Led high-engagement e-commerce platform development and contributed to open-source projects. AWS Solutions Architect Certified. Open to new challenges.</p>
+            <p className="text-gray-600 text-center font-light lg:px-16">-</p>
             <button
           className="text-indigo-500 py-2 px-4  font-medium mt-4"
         >

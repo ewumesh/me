@@ -110,3 +110,9 @@ html {
   background-color: #8844cc;
  }
  /*End  */
+
+ pre {
+  background-color: #0000006b !important;
+    padding: 10px 15px !important;
+    border-radius: 5px !important;
+ }

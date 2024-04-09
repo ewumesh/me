@@ -105,7 +105,7 @@ export default function WriteBlog() {
       formData.append("thumbnail", thumbnail);
     }
     formData.append("content", content);
-    formData.append("user", loggedUserId);
+    formData.append("user", JSON.stringify(loggedUserId));
     formData.append("tags", JSON.stringify(tags));
 
     try {
