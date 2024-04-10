@@ -94,8 +94,8 @@ export default function ViewBlog() {
     }, [id]);
 
     return (
-        <section>
-            <Head>
+        <>
+        <Head>
                 <title>{blogDetails.title}</title>
                 <meta name="description" content={extractTextContentFromHTML(blogDetails?.content).slice(0,100)} />
                 <meta property="og:title" content={blogDetails?.title} />
@@ -109,6 +109,9 @@ export default function ViewBlog() {
                 <meta name="twitter:image" content={blogDetails.thumbnail } />
                 <meta name="twitter:url" content={`https://umesthapa.com.np/blog/${id}`} />
             </Head>
+
+            <section>
+            
 
             <main className="pt-8 pb-5 lg:pt-16 lg:pb-24  dark:bg-gray-900 antialiased backdrop-blur-sm">
                 <div className="flex justify-between px-20 top-10">
@@ -277,5 +280,7 @@ export default function ViewBlog() {
                 </div>
             </section>
         </section>
+        </>
+        
     )
 }
