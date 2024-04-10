@@ -18,7 +18,10 @@ export const viewport: Viewport = {
   themeColor: "#030014",
 };
 
-export const metadata: Metadata = siteConfig;
+export const metadata: Metadata = {
+  title:'Ewumesh | Providing the best project experience',
+  description:'Explore our cutting-edge projects, dynamic solutions, and unpralleled expertise in software development, web design, and digital transformation.'
+};
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (

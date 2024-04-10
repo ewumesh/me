@@ -5,7 +5,7 @@ import axios from "axios";
 import { parseISO, format } from 'date-fns';
 import { usePathname } from 'next/navigation';
 import { API_URL } from '@/constants';
-import Head from 'next/head';
+import Head from 'next/head'; 
 
 export default function ViewBlog() {
     const [blogDetails, setBlogDetails] = useState<any>({});
