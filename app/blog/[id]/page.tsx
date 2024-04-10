@@ -1,4 +1,3 @@
-'use client'
 
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
@@ -8,9 +7,6 @@ import { API_URL } from '@/constants';
 import Head from 'next/head'; 
 import { Metadata } from 'next';
 
-interface BlogPostPageProps {
-    params: {id: string};
-}
 
 export async function generateMetadata(id:any): Promise<Metadata> {
     const response = await fetch(`${API_URL.url}/api/blog/${id}`);
