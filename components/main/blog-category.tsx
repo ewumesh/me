@@ -4,6 +4,7 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import axios from "axios";
 import { API_URL } from "@/constants";
+import { Token } from "@/middleware/token-middleware";
 
 export default function BlogCategory() {
     const [name, setName] = useState('');
@@ -77,7 +78,7 @@ export default function BlogCategory() {
         window.scroll(0, 0);
         setIsEditing(true);
         setEditingCategory(category);
-        setName(category.name); // Assuming the category object has a 'name' property
+        setName(category.name);
     };
 
     const handleNameChange = (event: any) => {
