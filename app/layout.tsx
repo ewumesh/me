@@ -19,7 +19,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title:'Ewumesh | Providing the best project experience',
+  title:{
+    default:'Ewumesh - Providing the best project experience',
+    template:'%s - Ewumesh'
+  },
   description:'Explore our cutting-edge projects, dynamic solutions, and unpralleled expertise in software development, web design, and digital transformation.'
 };
 
