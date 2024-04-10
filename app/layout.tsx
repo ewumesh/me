@@ -23,7 +23,10 @@ export const metadata: Metadata = {
     default:'Ewumesh - Providing the best project experience',
     template:'%s - Ewumesh'
   },
-  description:'Explore our cutting-edge projects, dynamic solutions, and unpralleled expertise in software development, web design, and digital transformation.'
+  description:'Explore our cutting-edge projects, dynamic solutions, and unpralleled expertise in software development, web design, and digital transformation.',
+  twitter: {
+    card:'summary_large_image'
+  }
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
