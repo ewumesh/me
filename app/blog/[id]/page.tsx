@@ -1,3 +1,4 @@
+"use client";
 
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
@@ -8,21 +9,21 @@ import Head from 'next/head';
 import { Metadata } from 'next';
 
 
-export async function generateMetadata(id:any): Promise<Metadata> {
-    const response = await fetch(`${API_URL.url}/api/blog/${id}`);
-    const post = await response.json();
-    return {
-        title: post.title,
-        description: 'Dynamic Content...............................................................',
-        openGraph: {
-            images:[
-                {
-                    url: post.thumbnail
-                }
-            ]
-        }
-    }
-}
+// export async function generateMetadata(id:any): Promise<Metadata> {
+//     const response = await fetch(`${API_URL.url}/api/blog/${id}`);
+//     const post = await response.json();
+//     return {
+//         title: post.title,
+//         description: 'Dynamic Content...............................................................',
+//         openGraph: {
+//             images:[
+//                 {
+//                     url: post.thumbnail
+//                 }
+//             ]
+//         }
+//     }
+// }
 
 export default function ViewBlog() {
     const [blogDetails, setBlogDetails] = useState<any>({});
@@ -108,7 +109,7 @@ export default function ViewBlog() {
         fetchBlogById();
         getBlogsLatest();
         getBlogCategories();
-        generateMetadata(id);
+        // generateMetadata(id);
     }, [id]);
 
     return (
