@@ -108,7 +108,7 @@ export default function BlogCategory() {
                     body: formData,
                 });
             } else {
-                response = await fetch(`${API_URL.url}/api/blog-category`, {
+                response = await Token(fetch)(`${API_URL.url}/api/blog-category`, {
                     method: "POST",
                     body: formData,
                 });

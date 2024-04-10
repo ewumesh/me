@@ -5,11 +5,7 @@ import axios from "axios";
 import { parseISO, format } from 'date-fns';
 import { usePathname } from 'next/navigation';
 import { API_URL } from '@/constants';
-
-import { Metadata } from 'next';
-
-// export const metadata: Metadata= {};
-
+import Head from 'next/head';
 
 export default function ViewBlog() {
     const [blogDetails, setBlogDetails] = useState<any>({});
@@ -80,6 +76,17 @@ export default function ViewBlog() {
         }
     };
 
+    function extractTextContentFromHTML(htmlString: string): string {
+		// Create a new DOMParser instance
+		const parser = new DOMParser();
+		// Parse the HTML string into a document object
+		const doc = parser.parseFromString(htmlString, 'text/html');
+		// Extract the text content from the document
+		const textContent = doc.body.textContent || '';
+		// Return the extracted text content
+		return textContent;
+	}
+
     useEffect(() => {
         fetchBlogById();
         getBlogsLatest();
@@ -88,6 +95,21 @@ export default function ViewBlog() {
 
     return (
         <section>
+            <Head>
+                <title>{blogDetails.title}</title>
+                <meta name="description" content={extractTextContentFromHTML(blogDetails?.content).slice(0,100)} />
+                <meta property="og:title" content={blogDetails?.title} />
+                <meta property="og:description" content={extractTextContentFromHTML(blogDetails?.content).slice(0,100)} />
+                <meta property="og:image" content={blogDetails.thumbnail} />
+                <meta property="og:url" content={`https://umesthapa.com.np/blog/${id}`} />
+                {/* Twitter Card tags */}
+                <meta name="twitter:card" content={blogDetails.thumbnail} />
+                <meta name="twitter:title" content={blogDetails.title } />
+                <meta name="twitter:description" content={extractTextContentFromHTML(blogDetails?.content).slice(0,100)} />
+                <meta name="twitter:image" content={blogDetails.thumbnail } />
+                <meta name="twitter:url" content={`https://umesthapa.com.np/blog/${id}`} />
+            </Head>
+
             <main className="pt-8 pb-5 lg:pt-16 lg:pb-24  dark:bg-gray-900 antialiased backdrop-blur-sm">
                 <div className="flex justify-between px-20 top-10">
                     <article className="mx-auto w-full  format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
