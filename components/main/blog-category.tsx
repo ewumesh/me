@@ -92,6 +92,9 @@ export default function BlogCategory() {
     };
 
     const handleSaveChange = async (event: any) => {
+
+        let details = JSON.parse(localStorage.getItem('userDetails') || '{}');
+
         event.preventDefault();
         setIsLoading(true);
         const formData = new FormData();
@@ -108,9 +111,12 @@ export default function BlogCategory() {
                     body: formData,
                 });
             } else {
-                response = await Token(fetch)(`${API_URL.url}/api/blog-category`, {
-                    method: "POST",
-                    body: formData,
+                response = await fetch(`${API_URL.url}/api/blog-category`, {
+                    method:'POST',
+                    headers: {
+                        'Authorization': `Bearer ${details.accessToken}` // Include the bearer token in the Authorization header
+                    },
+                    body: formData
                 });
             }
 
