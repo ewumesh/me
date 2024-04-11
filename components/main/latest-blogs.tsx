@@ -14,7 +14,7 @@ import {
 import { API_URL } from '@/constants';
 
 function getTimeDifference(dateString: string) {
-    let a = formatDistance(subDays(dateString, 3), new Date(), { addSuffix: true })
+    let a = formatDistance(subDays(dateString, 0), new Date(), { addSuffix: true })
     return a;
 }
 
@@ -43,6 +43,17 @@ function extractTextFromHTML(html: string): string {
 
     // Concatenate extracted text and return
     return extractedText.join('\n').slice(0, 200) + '...';
+}
+
+function extractTextContentFromHTML(htmlString: string): string {
+    // Create a new DOMParser instance
+    const parser = new DOMParser();
+    // Parse the HTML string into a document object
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    // Extract the text content from the document
+    const textContent = doc.body.textContent || '';
+    // Return the extracted text content
+    return textContent;
 }
 
 export const LatestBlogs = () => {
@@ -118,12 +129,12 @@ export const LatestBlogs = () => {
                                     <span className="text-sm">{getTimeDifference(blog.createdAt)}</span>
                                 </div>
                                 <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-white"><a href={'/blog/' + blog._id}>{blog.title}</a></h2>
-                                <p className="mb-5 font-light text-gray-500 dark:text-gray-400">{(blog?.content).slice(0,200)}</p>
+                                <p className="mb-5 font-light text-gray-500 dark:text-gray-400">{extractTextContentFromHTML(blog?.content).slice(0,200)}</p>
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center space-x-4">
-                                        <img className="w-7 h-7 rounded-full" src={'author.jpg'} alt="Umesh Thapa" />
-                                        <span className="font-medium text-white">
-                                            Umesh Thapa
+                                        <img className="w-7 h-7 rounded-full" src={blog?.user?.image} alt="Umesh Thapa" />
+                                        <span className="font-medium text-white" title={blog?.user?.name}>
+                                            {blog?.user?.name}
                                         </span>
                                     </div>
                                     <a  href={'/blog/' + blog._id} className="inline-flex items-center font-medium text-primary-600 text-white hover:underline">

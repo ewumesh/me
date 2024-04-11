@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { InputTags } from "react-bootstrap-tagsinput";
 import { API_URL } from "@/constants";
 import 'react-quill/dist/quill.snow.css';
+import { Token } from "@/middleware/token-middleware";
 
 const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
 
@@ -109,7 +110,7 @@ export default function WriteBlog() {
     formData.append("tags", JSON.stringify(tags));
 
     try {
-      const response = await fetch(`${API_URL.url}/api/blog`, {
+      const response = await Token(fetch)(`${API_URL.url}/api/blog`, {
         method: "POST",
         body: formData,
       });
