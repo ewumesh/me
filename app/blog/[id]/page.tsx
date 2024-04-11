@@ -5,6 +5,7 @@ import axios from "axios";
 import { parseISO, format } from 'date-fns';
 import { usePathname } from 'next/navigation';
 import { API_URL } from '@/constants';
+import { generateMetadata } from './meta';
 
 export default function ViewBlog() {
     const [blogDetails, setBlogDetails] = useState<any>({});
@@ -85,6 +86,17 @@ export default function ViewBlog() {
         // Return the extracted text content
         return textContent;
     }
+
+    useEffect(() => {
+        if (id !== null) {
+        const fetchMetadata = async () => {
+          const metadata = await generateMetadata({ params: {id} }, {});
+          console.log(metadata);
+        };
+    
+        fetchMetadata();
+    }
+     }, [id]);
 
     useEffect(() => {
         fetchBlogById();

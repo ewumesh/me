@@ -1,13 +1,15 @@
 "use client";
 
 import { API_URL } from "@/constants";
+// import { Metadata } from "next";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
+
+// export const metadata: Metadata = {
+//     title:'Login'
+// }
 
 export default function Login() {
-    // const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
