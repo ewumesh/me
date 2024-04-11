@@ -37,9 +37,8 @@ export default function Login() {
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem('userDetails', JSON.stringify(data.data));
-                // window.location.href = '/';
-                console.log('REEEEE')
-                redirect('/blogs')
+                window.location.href = '/';
+                // redirect('/blogs')
             } else {
                 setIsLoading(false);
                 console.error("Failed to Login:", response.statusText);

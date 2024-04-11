@@ -1,29 +1,10 @@
-"use client";
+"use client"
 
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { parseISO, format } from 'date-fns';
 import { usePathname } from 'next/navigation';
 import { API_URL } from '@/constants';
-import Head from 'next/head'; 
-import { Metadata } from 'next';
-
-
-// export async function generateMetadata(id:any): Promise<Metadata> {
-//     const response = await fetch(`${API_URL.url}/api/blog/${id}`);
-//     const post = await response.json();
-//     return {
-//         title: post.title,
-//         description: 'Dynamic Content...............................................................',
-//         openGraph: {
-//             images:[
-//                 {
-//                     url: post.thumbnail
-//                 }
-//             ]
-//         }
-//     }
-// }
 
 export default function ViewBlog() {
     const [blogDetails, setBlogDetails] = useState<any>({});
@@ -38,8 +19,8 @@ export default function ViewBlog() {
         return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>;
     }
 
-    const getCategoryName = (id:any) => {
-        const category = blogCategories.find(a =>a._id === id)?.name;
+    const getCategoryName = (id: any) => {
+        const category = blogCategories.find(a => a._id === id)?.name;
         return category;
     }
 
@@ -95,43 +76,27 @@ export default function ViewBlog() {
     };
 
     function extractTextContentFromHTML(htmlString: string): string {
-		// Create a new DOMParser instance
-		const parser = new DOMParser();
-		// Parse the HTML string into a document object
-		const doc = parser.parseFromString(htmlString, 'text/html');
-		// Extract the text content from the document
-		const textContent = doc.body.textContent || '';
-		// Return the extracted text content
-		return textContent;
-	}
+        // Create a new DOMParser instance
+        const parser = new DOMParser();
+        // Parse the HTML string into a document object
+        const doc = parser.parseFromString(htmlString, 'text/html');
+        // Extract the text content from the document
+        const textContent = doc.body.textContent || '';
+        // Return the extracted text content
+        return textContent;
+    }
 
     useEffect(() => {
         fetchBlogById();
-        getBlogsLatest();
-        getBlogCategories();
-        // generateMetadata(id);
     }, [id]);
 
+    useEffect(() => {
+        getBlogsLatest();
+        getBlogCategories();
+    })
+
     return (
-        <>
-        <Head>
-                <title>{blogDetails.title}</title>
-                <meta name="description" content={extractTextContentFromHTML(blogDetails?.content).slice(0,100)} />
-                <meta property="og:title" content={blogDetails?.title} />
-                <meta property="og:description" content={extractTextContentFromHTML(blogDetails?.content).slice(0,100)} />
-                <meta property="og:image" content={blogDetails.thumbnail} />
-                <meta property="og:url" content={`https://umesthapa.com.np/blog/${id}`} />
-                {/* Twitter Card tags */}
-                <meta name="twitter:card" content={blogDetails.thumbnail} />
-                <meta name="twitter:title" content={blogDetails.title } />
-                <meta name="twitter:description" content={extractTextContentFromHTML(blogDetails?.content).slice(0,100)} />
-                <meta name="twitter:image" content={blogDetails.thumbnail } />
-                <meta name="twitter:url" content={`https://umesthapa.com.np/blog/${id}`} />
-            </Head>
-
-            <section>
-            
-
+        <section>
             <main className="pt-8 pb-5 lg:pt-16 lg:pb-24  dark:bg-gray-900 antialiased backdrop-blur-sm">
                 <div className="flex justify-between px-20 top-10">
                     <article className="mx-auto w-full  format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
@@ -155,7 +120,7 @@ export default function ViewBlog() {
                             <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl text-white">{blogDetails?.title}</h1>
                         </header>
 
-                        <figure className='mb-5'><img style={{height:'400px', objectFit:'cover', width:'100%'}} src={blogDetails?.thumbnail} alt="" />
+                        <figure className='mb-5'><img style={{ height: '400px', objectFit: 'cover', width: '100%' }} src={blogDetails?.thumbnail} alt="" />
                             {/* <figcaption className="text-base text-gray-500 dark:text-gray-400">Digital art by Anonymous</figcaption> */}
                         </figure>
                         {/* <MarkdownContent content={blogDetails?.content} /> */}
@@ -187,31 +152,31 @@ export default function ViewBlog() {
                         </section>
                     </article>
                     {latestBlogs?.length && (
-                    <aside className="w-full lg:w-2/6 p-4 lg:p-8  backdrop-blur-sm">
-                        <div className="sticky top-20">
+                        <aside className="w-full lg:w-2/6 p-4 lg:p-8  backdrop-blur-sm">
+                            <div className="sticky top-20">
 
-                            <div className="hidden py-2 xl:col-span-3 lg:col-span-4 md:hidden lg:block">
-                                <div className=" space-x-5 border-b-2 border-opacity-10 dark:border-violet-600">
-                                    <button type="button" className="pb-5 text-xs font-bold uppercase border-b-2 dark:border-violet-600 text-white">Latest Blogs</button>
-                                </div>
-                                <div className="flex flex-col divide-y dark:divide-gray-800">
-                                    {latestBlogs.slice(0, 5)?.map((lBlog: any, index: number) => (
-                                        <div key={index} className="flex px-1 py-4">
-                                            <img alt="" className="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src={lBlog?.thumbnail} />
-                                            <div className="flex flex-col flex-grow">
-                                                <a rel="noopener noreferrer" href={'/blog/' + lBlog?._id} className="hover:underline text-white text-sm" title={lBlog?.title}>{lBlog?.title.slice(0, 60)}</a>
-                                                {lBlog?.createdAt && (
-                                                    <p className="mt-auto text-xs text-white">{formatDate(lBlog?.createdAt)}</p>
-                                                )}
+                                <div className="hidden py-2 xl:col-span-3 lg:col-span-4 md:hidden lg:block">
+                                    <div className=" space-x-5 border-b-2 border-opacity-10 dark:border-violet-600">
+                                        <button type="button" className="pb-5 text-xs font-bold uppercase border-b-2 dark:border-violet-600 text-white">Latest Blogs</button>
+                                    </div>
+                                    <div className="flex flex-col divide-y dark:divide-gray-800">
+                                        {latestBlogs.slice(0, 5)?.map((lBlog: any, index: number) => (
+                                            <div key={index} className="flex px-1 py-4">
+                                                <img alt="" className="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src={lBlog?.thumbnail} />
+                                                <div className="flex flex-col flex-grow">
+                                                    <a rel="noopener noreferrer" href={'/blog/' + lBlog?._id} className="hover:underline text-white text-sm" title={lBlog?.title}>{lBlog?.title.slice(0, 60)}</a>
+                                                    {lBlog?.createdAt && (
+                                                        <p className="mt-auto text-xs text-white">{formatDate(lBlog?.createdAt)}</p>
+                                                    )}
 
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </aside>
+                        </aside>
                     )}
                 </div>
             </main>
@@ -299,7 +264,5 @@ export default function ViewBlog() {
                 </div>
             </section>
         </section>
-        </>
-        
     )
 }
