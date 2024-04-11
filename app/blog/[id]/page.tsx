@@ -88,12 +88,13 @@ export default function ViewBlog() {
 
     useEffect(() => {
         fetchBlogById();
-    }, [id]);
-
-    useEffect(() => {
         getBlogsLatest();
         getBlogCategories();
-    })
+    }, [id]);
+
+    // useEffect(() => {
+        
+    // })
 
     return (
         <section>
