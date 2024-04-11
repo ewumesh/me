@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 // export const metadata: Metadata = {
 //     title:'Login'
-// }
+//   };
 
 export default function Login() {
 
