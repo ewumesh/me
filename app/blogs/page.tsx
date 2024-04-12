@@ -83,7 +83,7 @@ export default function Blogs() {
 					{blog.createdAt && (
 					<span className="text-xs dark:text-gray-400 text-white">{formatDate(blog?.createdAt)}</span>
 					)}
-					<p className='text-white text-sm'>{blog.excerpt.slice(0,100)}..</p>
+					<p className='text-white text-sm' title={blog.excerpt}>{blog.excerpt.slice(0,100)}..</p>
 				</div>
 			</a>
 		))}
