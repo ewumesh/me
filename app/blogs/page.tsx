@@ -71,7 +71,7 @@ export default function Blogs() {
 				{blogs[0].createdAt && (
 					<span className="text-xs dark:text-gray-400 text-white">{formatDate(blogs[0].createdAt)}</span>
 				)}
-				<p className='text-white'>{extractTextContentFromHTML(blogs[0].content).slice(0,500)}</p>
+				<p className='text-white'>{(blogs[0].excerpt)}</p>
 			</div>
 		</a>
 		<div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -83,7 +83,7 @@ export default function Blogs() {
 					{blog.createdAt && (
 					<span className="text-xs dark:text-gray-400 text-white">{formatDate(blog?.createdAt)}</span>
 					)}
-					<p className='text-white text-sm'>{extractTextContentFromHTML(blog.content).slice(0,150)}..</p>
+					<p className='text-white text-sm'>{blog.excerpt.slice(0,100)}..</p>
 				</div>
 			</a>
 		))}

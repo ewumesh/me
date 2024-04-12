@@ -30,8 +30,8 @@ export default function BlogManagement() {
     </ul>
 </div>
 <div id="default-styled-tab-content">
-    <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-profile" role="tabpanel" aria-labelledby="profile-tab">
-        <AllActiveBlogs />
+    <div className="hidden rounded-lg backdrop-blur-md" id="styled-profile" role="tabpanel" aria-labelledby="profile-tab">
+        <AllActiveBlogs /> 
     </div>
     <div className="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
         <AllDraftBlogs />

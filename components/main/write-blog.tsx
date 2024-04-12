@@ -16,6 +16,7 @@ const markdown = `
 export default function WriteBlog() {
   const [loggedUserId, setLoggedUserId] = useState('');
   const [title, setTitle] = useState('');
+  const [conclusion, setConclusion] = useState('');
   const [category, setCategory] = useState('');
   const [thumbnail, setThumbnail] = useState(null);
   const [content, setContent] = useState('');
@@ -86,6 +87,10 @@ export default function WriteBlog() {
     setTitle(event.target.value);
   };
 
+  const handleConslusionChange = (event: any) => {
+    setConclusion(event.target.value);
+  };
+
   const handleCategoryChange = (event: any) => {
     setCategory(event.target.value);
   };
@@ -101,6 +106,7 @@ export default function WriteBlog() {
 
     const formData = new FormData();
     formData.append("title", title);
+    formData.append("excerpt", conclusion);
     formData.append("category", category);
     if (thumbnail !== null) {
       formData.append("thumbnail", thumbnail);
@@ -118,6 +124,7 @@ export default function WriteBlog() {
       if (response.ok) {
         console.log("Blog post created successfully!");
         setTitle('');
+        setConclusion('');
         setContent('');
         setThumbnail(null);
         setIsLoading(false);
@@ -169,6 +176,9 @@ export default function WriteBlog() {
       className="w-full h-[70%] mt-10"
      />
             </div>
+
+            <label className="block text-sm font-medium leading-6 text-white">Conclusion</label>
+            <input type="text" name="title" onChange={handleConslusionChange} value={conclusion} placeholder="Enter Conclusion" className="py-2 px-4 bg-gray-800 text-white rounded-md focus:outline-none w-full mb-4" required />
 
             <div>
               <div className='input-group py-2 px-4  bg-gray-800 text-white rounded-md focus:outline-none mb-4 resize-none w-full'>
