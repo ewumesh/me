@@ -89,7 +89,6 @@ export default function Blogs() {
 		))}
 		</div>
 		<div className="flex justify-center">
-			{/* <button type="button" onClick={loadMore} className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400 text-white">Load more posts...</button> */}
 <button onClick={loadMore} disabled={isLoading || limit >= totalPages} type="button" className="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center">
 
 {isLoading && (
