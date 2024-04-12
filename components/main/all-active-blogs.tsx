@@ -103,12 +103,12 @@ export default function AllActiveBlogs() {
     }
 
     return (
-        <section>
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <section> 
+            <div className="relative overflow-x-auto ">
                 {!isLoading && (
                     <div>
-                        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <table className="w-full text-sm text-left rtl:text-right text-white backdrop-blur-md border rounded-sm">
+                            <thead className="text-xs  uppercase ">
                                 <tr>
                                     <th scope="col" className="px-6 py-3">
                                         S.N.
@@ -133,8 +133,8 @@ export default function AllActiveBlogs() {
                             </thead>
                             <tbody>
                                 {allBlogs.map((blog: any, index: number) => (
-                                    <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <tr key={index} className=" text-white backdrop-blur-md">
+                                        <th scope="row" className="px-6 py-4 font-medium text-white">
                                             {index + 1}
                                         </th>
                                         <td className="px-6 py-4">
@@ -175,19 +175,19 @@ export default function AllActiveBlogs() {
                             </tbody>
                         </table>
 
-                        <nav aria-label="Page navigation py-2 my-2">
+                        <nav className="py-2" aria-label="Page navigation">
             <ul className="inline-flex -space-x-px text-sm">
                 <li>
                     <button onClick={goToPreviousPage} className="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</button>
                 </li>
                 {/* Render page numbers */}
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNumber => (
+                {/* {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNumber => (
                     <li key={pageNumber}>
                         <button onClick={() => setCurrentPage(pageNumber)} className={`flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${currentPage === pageNumber ? 'text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white' : ''}`}>
                             {pageNumber}
                         </button>
                     </li>
-                ))}
+                ))} */}
                 <li>
                     <button onClick={goToNextPage} className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</button>
                 </li>

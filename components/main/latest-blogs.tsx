@@ -129,7 +129,7 @@ export const LatestBlogs = () => {
                                     <span className="text-sm">{getTimeDifference(blog.createdAt)}</span>
                                 </div>
                                 <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-white"><a href={'/blog/' + blog._id}>{blog.title}</a></h2>
-                                <p className="mb-5 font-light text-gray-500 dark:text-gray-400">{extractTextContentFromHTML(blog?.content).slice(0,200)}</p>
+                                <p className="mb-5 font-light text-gray-500 dark:text-gray-400" title={blog?.excerpt}>{blog?.excerpt.slice(0,200)}..</p>
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center space-x-4">
                                         <img className="w-7 h-7 rounded-full" src={blog?.user?.image} alt="Umesh Thapa" />
