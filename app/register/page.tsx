@@ -13,6 +13,7 @@ export default function Register() {
     const [image, setImage] = useState(null);
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [resposeError, setResponseError] = useState(null);
 
     const handleImageChange = (event: any) => {
         const file = event.target.files[0];
@@ -50,10 +51,12 @@ export default function Register() {
 
             if (response.ok) {
                 const data = await response.json();
-                window.location.href = '/login';
+                localStorage.setItem('userEmail', JSON.stringify(email));
+                window.location.href = '/verify-otp';
             } else {
                 setIsLoading(false);
-                console.error("Failed to Login:", response.statusText);
+                const error = await response.json();
+                setResponseError(error.message)
             }
         } catch (error) {
             setIsLoading(false);
@@ -77,11 +80,16 @@ export default function Register() {
                     <div className=" min-h-screen w-1/2 flex justify-center items-center backdrop-blur-md">
                         <div>
 
-                            <form autoFocus={false} autoComplete="off">
+                            <form autoFocus={false} autoComplete="off" className="mt-20">
                                 <div>
                                     <span className="text-sm text-white">Hi!</span>
-                                    <h1 className="text-2xl font-bold text-white">Explore and enjoy our latest feature.</h1>
+                                    <h1 className="text-sm font-bold text-white">Explore and enjoy our latest feature.</h1>
                                 </div>
+                                {resposeError && (
+                                    <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                                    {resposeError}
+                                </div>
+                                )}
                                 <div className="my-3">
                                     <label className="block text-md text-white mb-2" >Name</label>
                                     <input value={name} onChange={handleNameChange} className="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="text" name="name" placeholder="Full Name" />

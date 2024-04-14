@@ -5,10 +5,6 @@ import { API_URL } from "@/constants";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-// export const metadata: Metadata = {
-//     title:'Login'
-//   };
-
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -39,14 +35,19 @@ export default function Login() {
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem('userDetails', JSON.stringify(data.data));
-                window.location.href = '/';
+                localStorage.setItem('userEmail', JSON.stringify(email));
+                if(data && data?.data?.user?.isVerified) {
+                    window.location.href = '/';
+                } else {
+                    window.location.href = '/verify-otp';
+                }
+                
                 setResponseError(null);
                 // redirect('/blogs')
             } else {
                 setIsLoading(false);
                 const error = await response.json();
                 setResponseError(error.message)
-                console.error("Failed to Login:--------------------------", error.message || response.statusText);
             }
         } catch (error: any) {
             setIsLoading(false);
@@ -69,7 +70,6 @@ export default function Login() {
                 <div className="flex justify-end">
                     <div className=" min-h-screen w-1/2 flex justify-center items-center backdrop-blur-md">
                         <div>
-
                             <form autoFocus={false} autoComplete="off">
                                 <div>
                                     <span className="text-sm text-white">Welcome back</span>
