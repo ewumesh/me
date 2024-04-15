@@ -20,9 +20,11 @@ export const ProjectCard = ({
       rel="noreferrer noopener"
       className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] h-auto"
     >
-      <img
+      <Image
         src={src}
         alt={title}
+        width={1000}
+        height={1000}
         className="w-full h-40 object-contain"
       />
 
