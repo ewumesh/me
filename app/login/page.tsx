@@ -1,15 +1,20 @@
 "use client";
 
 import { API_URL } from "@/constants";
-// import { Metadata } from "next";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
+    const router = useRouter();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [resposeError, setResponseError] = useState(null);
+
+    const gotoRegister = () => {
+        router.push('/register')
+    }
 
     const handleEmailChange = (event: any) => {
         setEmail(event.target.value);
@@ -37,9 +42,11 @@ export default function Login() {
                 localStorage.setItem('userDetails', JSON.stringify(data.data));
                 localStorage.setItem('userEmail', JSON.stringify(email));
                 if(data && data?.data?.user?.isVerified) {
-                    window.location.href = '/';
+                    // window.location.href = '/';
+                    router.push('/')
                 } else {
-                    window.location.href = '/verify-otp';
+                    router.push('/verify-otp')
+                    // window.location.href = '/verify-otp';
                 }
                 
                 setResponseError(null);
@@ -115,7 +122,7 @@ export default function Login() {
                                     </div>
                                 </div>
                             </form>
-                            <p className="mt-8"><span className="text-white"> Dont have an account?</span> <Link href="/register"> <span className="cursor-pointer text-sm text-blue-600"> Join free today</span></Link></p>
+                            <p className="mt-8"><span className="text-white"> Dont have an account?</span><span onClick={gotoRegister} className="cursor-pointer text-sm text-blue-600"> Join free today</span></p>
                         </div>
                     </div>
                 </div>

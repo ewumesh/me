@@ -3,11 +3,11 @@ import { Inter } from "next/font/google";
 import type { PropsWithChildren } from "react";
 
 import { Footer } from "@/components/main/footer";
-import { Navbar } from "@/components/main/navbar";
 import { StarsCanvas } from "@/components/main/star-background";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
+import Navbar from "@/components/main/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 

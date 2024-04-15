@@ -1,10 +1,10 @@
 import { Encryption } from "@/components/main/encryption";
 import { Hero } from "@/components/main/hero";
-import { LatestBlogs } from "@/components/main/latest-blogs";
 import { Projects } from "@/components/main/projects";
 import { Services } from "@/components/main/services";
 import { Skills } from "@/components/main/skills";
 import { MQ } from "@/components/main/mq";
+import LatestBlogs from "@/components/main/latest-blogs";
 
 export default function Home() { 
   return (

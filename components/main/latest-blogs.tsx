@@ -1,15 +1,13 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 import { formatDistance, subDays } from 'date-fns';
 import { motion } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-import Image from 'next/image';
 import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
+    slideInFromLeft,
+    slideInFromRight,
+    slideInFromTop,
 } from "@/lib/motion";
 import { API_URL } from '@/constants';
 
@@ -18,45 +16,8 @@ function getTimeDifference(dateString: string) {
     return a;
 }
 
-function convertToSlug(inputString: string): string {
-    // Convert string to lowercase
-    const lowercaseString = inputString.toLowerCase();
-    // Replace spaces with hyphens
-    const slugString = lowercaseString.replace(/\s+/g, '-');
-    return slugString;
-}
+export default function LatestBlogs() {
 
-function extractTextFromHTML(html: string): string {
-    // Regular expression to match text within paragraph tags
-    const paragraphRegex = /<p[^>]*>(.*?)<\/p>/gs;
-
-    // Array to store extracted text
-    const extractedText: string[] = [];
-
-    // Iterate over matches and extract text
-    let match;
-    while ((match = paragraphRegex.exec(html)) !== null) {
-        // Extract text content from match
-        const textContent = match[1].replace(/(<([^>]+)>)/gi, ''); // Remove any HTML tags within the paragraph
-        extractedText.push(textContent.trim());
-    }
-
-    // Concatenate extracted text and return
-    return extractedText.join('\n').slice(0, 200) + '...';
-}
-
-function extractTextContentFromHTML(htmlString: string): string {
-    // Create a new DOMParser instance
-    const parser = new DOMParser();
-    // Parse the HTML string into a document object
-    const doc = parser.parseFromString(htmlString, 'text/html');
-    // Extract the text content from the document
-    const textContent = doc.body.textContent || '';
-    // Return the extracted text content
-    return textContent;
-}
-
-export const LatestBlogs = () => {
     const [latestBlogs, setLatestBlogs] = useState<any[]>([]);
 
     useEffect(() => {
@@ -72,10 +33,7 @@ export const LatestBlogs = () => {
                 console.error("Error fetching latest blogs:", error);
             }
         };
-
         getBlogsLatest();
-        
-
     }, []);
 
     return (
@@ -87,39 +45,32 @@ export const LatestBlogs = () => {
                         <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
                     </div> */}
                     <div className="w-full h-auto flex flex-col items-center justify-center">
-      <motion.div
-        variants={slideInFromTop}
-        className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
-      >
-        <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-        <h1 className="Welcome-text text-[13px]">
-          Read More Learn More
-        </h1>
-      </motion.div>
+                        <motion.div
+                            variants={slideInFromTop}
+                            className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
+                        >
+                            <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
+                            <h1 className="Welcome-text text-[13px]">
+                                Read More Learn More
+                            </h1>
+                        </motion.div>
 
-      <motion.div
-        variants={slideInFromLeft(0.5)}
-        className="text-[30px] text-white font-medium mt-[10px] text-center mb-[15px]"
-      >
-        Latest Blogs
-      </motion.div>
+                        <motion.div
+                            variants={slideInFromLeft(0.5)}
+                            className="text-[30px] text-white font-medium mt-[10px] text-center mb-[15px]"
+                        >
+                            Latest Blogs
+                        </motion.div>
 
-      {/* <motion.div
-        variants={slideInFromRight(0.5)}
-        className=" text-[20px] text-gray-200 mb-10 mt-[10px] text-center"
-      >
-        Unlocking the Secrets of Productivity.
-      </motion.div> */}
-
-      <motion.div
-        variants={slideInFromRight(0.5)}
-        className=" text-[20px] text-gray-500 mb-10 mt-[5px] text-center"
-      >
-       Unlocking the Secrets of Productivity.
-      </motion.div>
-    </div>
+                        <motion.div
+                            variants={slideInFromRight(0.5)}
+                            className=" text-[20px] text-gray-500 mb-10 mt-[5px] text-center"
+                        >
+                            Unlocking the Secrets of Productivity.
+                        </motion.div>
+                    </div>
                     <div className="grid gap-8 lg:grid-cols-2">
-                        {latestBlogs.map((blog:any, index:number) => (
+                        {latestBlogs.map((blog: any, index: number) => (
                             <article key={index} className="p-6  rounded-lg border border-gray-900 shadow-md dark:bg-gray-800 dark:border-gray-700 backdrop-blur-sm">
                                 <div className="flex justify-between items-center mb-5 text-gray-500">
                                     <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
@@ -129,7 +80,7 @@ export const LatestBlogs = () => {
                                     <span className="text-sm">{getTimeDifference(blog.createdAt)}</span>
                                 </div>
                                 <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-white"><a href={'/blog/' + blog._id}>{blog.title}</a></h2>
-                                <p className="mb-5 font-light text-gray-500 dark:text-gray-400" title={blog?.excerpt}>{blog?.excerpt.slice(0,200)}..</p>
+                                <p className="mb-5 font-light text-gray-500 dark:text-gray-400" title={blog?.excerpt}>{blog?.excerpt.slice(0, 200)}..</p>
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center space-x-4">
                                         <img className="w-7 h-7 rounded-full" src={blog?.user?.image} alt="Umesh Thapa" />
@@ -137,7 +88,7 @@ export const LatestBlogs = () => {
                                             {blog?.user?.name}
                                         </span>
                                     </div>
-                                    <a  href={'/blog/' + blog._id} className="inline-flex items-center font-medium text-primary-600 text-white hover:underline">
+                                    <a href={'/blog/' + blog._id} className="inline-flex items-center font-medium text-primary-600 text-white hover:underline">
                                         Read more
                                         <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                                     </a>

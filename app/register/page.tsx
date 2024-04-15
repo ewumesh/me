@@ -1,13 +1,14 @@
 "use client";
 
+import { useRouter } from 'next/navigation';
 import { API_URL } from "@/constants";
-import Link from "next/link";
-import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
+
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Register() {
-    // const navigate = useNavigate();
+    const router = useRouter();
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [image, setImage] = useState(null);
@@ -52,7 +53,8 @@ export default function Register() {
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem('userEmail', JSON.stringify(email));
-                window.location.href = '/verify-otp';
+                router.push('/verify-otp')
+                // window.location.href = '/verify-otp';
             } else {
                 setIsLoading(false);
                 const error = await response.json();
@@ -64,8 +66,12 @@ export default function Register() {
         }
     };
 
-    useEffect(() => {
 
+    const gotoLogin = () => {
+        router.push('/login');
+    }
+
+    useEffect(() => {
     }, []);
 
     const inlineStyles = {
@@ -126,10 +132,12 @@ export default function Register() {
 
                                         <img className="h-5 cursor-pointer" src="https://i.imgur.com/arC60SB.png" alt="" />
                                         <button >Or register with google</button>
+
+                                        
                                     </div>
                                 </div>
                             </form>
-                            <p className="mt-8"><span className="text-white"> Already have an account?</span> <Link href="/login"> <span className="cursor-pointer text-sm text-blue-600"> Login</span></Link></p>
+                            <p className="mt-8"><span className="text-white"> Already have an account?</span> <span onClick={gotoLogin} className="cursor-pointer text-sm text-blue-600"> Login</span></p>
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { LINKS, NAV_LINKS, SOCIALS } from "@/constants";
+import { NAV_LINKS } from "@/constants";
 import Image from 'next/image';
 import { useEffect, useState } from "react";
-export const Navbar = () => {
+
+export default function Navbar() {
   const [userDetails, setUserDetails] = useState<any>(null);
 
   useEffect(() => {
@@ -16,7 +17,7 @@ export const Navbar = () => {
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         <Link
-          href="/"
+        href="/"
           className="h-auto w-auto flex flex-row items-center"
         >
           <Image
@@ -27,9 +28,9 @@ export const Navbar = () => {
             draggable={false}
             className="cursor-pointer hover:animate-slowspin"
           />
-          {/* <div className="font-bold ml-[10px] hidden md:block text-gray-300">
-            ewumesh
-          </div> */}
+          <div className="font-bold ml-[10px] hidden md:block text-gray-300">
+            Ewumesh
+          </div>
         </Link>
 
         <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
@@ -43,16 +44,6 @@ export const Navbar = () => {
                 {link.title}
               </Link>
             ))}
-
-            {/* source code */}
-            {/* <Link
-              href={LINKS.sourceCode}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
-            >
-              Source Code
-            </Link> */}
           </div>
         </div>
 
