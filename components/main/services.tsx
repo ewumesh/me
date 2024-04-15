@@ -37,12 +37,12 @@ export const Services = () => {
 
       <motion.div
         variants={slideInFromRight(0.5)}
-        className=" text-[20px] text-gray-500 mb-10 mt-[5px] text-center"
+        className=" text-[20px] text-gray-500 mb-10 mt-[5px] px-2 text-center"
       >
 Solutions tailored to meet diverse needs and exceed expectations.
       </motion.div>
     </div>
-            <div className="mx-auto px-20 max-w-10xl text-gray-500">
+            <div className="mx-auto md:px-20 px-8 max-w-10xl text-gray-500">
 
                 <div className="relative">
                     <div className="relative z-10 grid gap-3 grid-cols-6">
