@@ -37,7 +37,7 @@ export const Encryption = () => {
         We use an agile approach to test assumptions and connect with the needs of your audience early and often.
       </motion.div> */}
     </div>
-    <div className="flex flex-row relative items-center justify-center md:min-h-screen sm:h-[50vh] xs:h-[50vh] w-full">
+    <div className="flex flex-row relative items-center justify-center md:min-h-screen sm:h-[70vh] xs:h-[70vh] w-full">
       {/* <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}
