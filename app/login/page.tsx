@@ -74,7 +74,7 @@ export default function Login() {
         <section className="top-20">
             <div className="top-20 min-h-screen bg-no-repeat bg-left"
                 style={inlineStyles}>
-                <div className="flex justify-end">
+                <div className="flex md:justify-end justify-center">
                     <div className=" min-h-screen w-1/2 flex justify-center items-center backdrop-blur-md">
                         <div>
                             <form autoFocus={false} autoComplete="off">
