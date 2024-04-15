@@ -27,7 +27,7 @@ export default function WriteBlog() {
 
   const quillModules = {
     toolbar: [
-     [{ header: [1, 2, 3, false] }],
+     [{ header: [1, 2, 3,4,5,6, false] }],
      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
      [{ list: 'ordered' }, { list: 'bullet' }],
      ['link', 'image'],
@@ -35,7 +35,20 @@ export default function WriteBlog() {
      [{ color: [] }],
      ['code-block'],
      ['clean'],
+
+     ['direction', 'indent', 'outdent'], // Text direction, indent, and outdent
+     ['font', 'size'], // Font family and size
+     ['script', 'sub', 'super'], // Superscript and subscript
+     ['formula'], // Math formulas
+     ['video'], // Video embedding
+     ['fullscreen'], // Fullscreen mode
+ 
     ],
+
+    clipboard: {
+      matchVisual: false,
+   },
+  //   imageCompressor: true,
    };
   
   

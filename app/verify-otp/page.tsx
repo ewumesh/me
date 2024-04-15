@@ -160,7 +160,7 @@ export default function Login() {
                                         </div>
 
                                         <div className="flex flex-row items-center justify-center text-center text-sm font-medium space-x-1 text-gray-500">
-                                            <p>Didn't recieve code?</p> <a href="Javascript:;" className="flex flex-row items-center text-blue-600" onClick={handleResendOTP} target="_blank">Resend</a>
+                                            <p>Didn&apos;t recieve code?</p> <a href="Javascript:;" className="flex flex-row items-center text-blue-600" onClick={handleResendOTP} >Resend</a>
                                         </div>
                                     </div>
                                 </div>
