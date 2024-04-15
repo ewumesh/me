@@ -153,8 +153,8 @@ export default function ViewBlog() {
 
     return (
         <section>
-            <main className="pt-8 pb-5 lg:pt-16 lg:pb-24  dark:bg-gray-900 antialiased backdrop-blur-sm">
-                <div className="flex justify-between px-20 top-10">
+            <main className="md:pt-8 pt-20 pb-5 lg:pt-16 lg:pb-24  dark:bg-gray-900 antialiased backdrop-blur-sm">
+                <div className="flex justify-between md:px-20 px-8 top-10">
                     <article className="mx-auto w-full  format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
                         <header className="mb-4 lg:mb-6 not-format">
                             <address className="flex items-center mb-6 not-italic">
@@ -250,7 +250,7 @@ export default function ViewBlog() {
             </main>
 
             <aside aria-label="Related articles" className="py-8 lg:py-24  backdrop-blur-sm">
-                <div className="px-20 mx-auto">
+                <div className="md:px-20 px-8 mx-auto">
                     <h2 className="mb-8 text-2xl font-bold text-gray-900 text-white">Related articles</h2>
                     <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
                         <article className="max-w-xs">
