@@ -25,7 +25,7 @@ export const ProjectCard = ({
         alt={title}
         width={1000}
         height={1000}
-        className="w-full object-contain"
+        className="w-full h-40 object-contain"
       />
 
       <div className="relative p-4">
