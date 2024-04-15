@@ -14,7 +14,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 md:px-10">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         <Link
         href="/"
@@ -34,12 +34,12 @@ export default function Navbar() {
         </Link>
 
         <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+          <div className="flex items-center justify-between w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] md:px-[20px] py-[10px] rounded-full text-gray-200">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
+                className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-xs md:text-sm xl:text-base"
               >
                 {link.title}
               </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
 
           {!userDetails && (
             <Link
-              className="text-white"
+              className="text-white text-xs md:text-sm xl:text-base"
               href={'/login'}
             >
               Login
