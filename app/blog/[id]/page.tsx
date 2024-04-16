@@ -154,7 +154,7 @@ export default function ViewBlog() {
     return (
         <section>
             <main className="md:pt-8 pt-20 pb-5 lg:pt-16 lg:pb-24  dark:bg-gray-900 antialiased backdrop-blur-sm">
-                <div className="flex justify-between md:px-20 px-8 top-10">
+                <div className="md:flex md:justify-between md:px-20 px-8 top-10">
                     <article className="mx-auto w-full  format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
                         <header className="mb-4 lg:mb-6 not-format">
                             <address className="flex items-center mb-6 not-italic">
@@ -220,7 +220,7 @@ export default function ViewBlog() {
                         </section>
                     </article>
                     {latestBlogs?.length && (
-                        <aside className="w-full lg:w-2/6 p-4 lg:p-8  backdrop-blur-sm">
+                        <aside className="w-full lg:w-2/6 p-4 lg:p-8  backdrop-blur-sm md:visible invisible">
                             <div className="sticky top-20">
 
                                 <div className="hidden py-2 xl:col-span-3 lg:col-span-4 md:hidden lg:block">
