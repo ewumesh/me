@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 import Navbar from "@/components/main/navbar";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-      <head><meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+      <Head><meta name="viewport" content="width=device-width, initial-scale=1" /></Head>
       <body
         className={cn(
           "bg-[#030014] overflow-y-scroll overflow-x-hidden",
