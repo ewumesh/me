@@ -117,3 +117,8 @@ html {
     border-radius: 5px !important;
     overflow-x: auto;
  }
+
+ .bg-nf {
+  background-image: url('https://watch-this-six-phi.vercel.app/background.png');
+  height: 100vh;
+ }
