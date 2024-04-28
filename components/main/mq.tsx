@@ -23,7 +23,7 @@ export const MQ = () => {
         "/partners/o.png",
       ];
     return (
-        <AppContainer className="px-20">
+        <AppContainer className="px-32">
         <Wrapper>
           <Text>With Great Outcomes.</Text>
           <Note>Our customers have gotten offers from awesome companies.</Note>

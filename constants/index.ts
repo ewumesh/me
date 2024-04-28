@@ -439,10 +439,15 @@ export const NAV_LINKS = [
     title: "Tools",
     link: "/tools",
   },
-  // {
-  //   title: "Career",
-  //   link: "/",
-  // },
+  {
+    title: "About",
+    link: "/",
+  },
+
+  {
+    title: "Contact",
+    link: "/",
+  },
 ] as const;
 
 export const LINKS = {
