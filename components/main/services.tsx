@@ -42,7 +42,7 @@ export const Services = () => {
 Solutions tailored to meet diverse needs and exceed expectations.
       </motion.div>
     </div>
-            <div className="mx-auto md:px-32 px-8 max-w-10xl text-gray-500">
+            <div className="mx-auto md:px-44 px-8 max-w-10xl text-gray-500">
 
                 <div className="relative">
                     <div className="relative z-10 grid gap-3 grid-cols-6">
